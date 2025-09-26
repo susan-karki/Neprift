@@ -8,7 +8,7 @@ import toggle_dark from '../../assets/day.png'
 import toggle_light from '../../assets/night.png'
 import logo from '../../assets/web-logo.jpeg'
 
-
+//push to git
 const Navbar = () => {
   return (
     <div className="navbar">
