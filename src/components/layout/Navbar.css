@@ -1,0 +1,61 @@
+.navbar{
+    width : 100%;
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    background : gainsboro;
+    padding : 15px 7%;
+    padding-right: 30px;
+    
+}
+.logo{
+    width: 160px;
+    cursor: pointer;
+}
+.ul{
+    flex : 1;
+    list-style : none;
+    text-align : center;
+
+}
+ul li{
+    display : inline-block;
+    margin : 10px 20px;
+    font-size: 19px;
+    cursor : pointer;
+
+
+}
+/* .toggle-icon{
+    width: 50px;
+    cursor : pointer;
+    margin-left: 40px;
+} */
+.search-box{
+    display : flex;
+    align-items : center;
+    background : rgb(0, 0, 0);
+    opacity: 0.7;
+    padding : 10Px 20px;
+    border-radius: 50px;
+
+}
+.search-box input {
+    padding: 6px;
+    background : transparent;
+    border: 0;
+    outline : 0;
+    color: whitesmoke;
+    font-size : 19px;
+    max-width : 300px;
+
+}
+.search-box input ::placeholder{
+    color : #fff8f8;
+}
+
+.search-box img{
+    width : 20px;
+    cursor: pointer;
+
+}
