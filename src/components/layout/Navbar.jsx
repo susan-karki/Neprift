@@ -7,12 +7,12 @@ import search_icon_dark from '../../assets/search-b.png'
 import toggle_dark from '../../assets/day.png'
 import toggle_light from '../../assets/night.png'
 import logo from '../../assets/web-logo.jpeg'
+import { Link } from 'react-router-dom'
 
-//push to git
 const Navbar = () => {
   return (
     <div className="navbar">
-      <h1>Neprift</h1>
+     <Link to = '/'> <h1 className = 'namelogo'>Neprift</h1></Link>
       {/* <img src={logo_light} alt="" className = 'logo' /> */}
       {/* <ul>
         <li>Home</li>
@@ -25,10 +25,21 @@ const Navbar = () => {
         <img src={search_icon_light} alt="" />
       </div>
       <ul>
+        <Link to = '/'>
         <li>Home</li>
+        </Link>
+
+        <Link to = '/product'>
         <li>Products</li>
+        </Link>
+
+        <Link to = '/register'> 
         <li>Register</li>
+        </Link>
+
+        <Link to = '/login'>
         <li>Login</li>
+        </Link>
       </ul>
       {/* <img src={toggle_light} alt="" className = 'toggle-icon' /> */}
        

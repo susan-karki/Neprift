@@ -13,15 +13,16 @@ const Form = ({type}) => {
         {action === "Login"?<div></div>:
         <div className="input">
           <label>Name</label>
-          <input type="text" placeholder='enter your name' />
+          <input type="text" placeholder='enter your name' required/>
         </div>}
         <div className="input">
           <label>Email</label>
-          <input type="email"  placeholder='enter your email'/>
+          
+          <input type="email"  placeholder='enter your email' required/>
         </div>
         <div className="input">
           <label>Password</label>
-          <input type="password" placeholder='enter your password' />
+          <input type="password" placeholder='enter your password' required/>
         </div>
       </div>
       {action === "Sign Up"?<div></div>:
