@@ -29,8 +29,8 @@ const Navbar = () => {
         <li>Home</li>
         </Link>
 
-        <Link to = '/product'>
-        <li>Products</li>
+        <Link to = '/CartPage'>
+        <li>Cart</li>
         </Link>
 
         <Link to = '/register'> 

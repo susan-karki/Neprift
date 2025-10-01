@@ -6,7 +6,7 @@ const Singleproduct = () => {
   return (
     <Layout>
    <div className="body">
-    <div className="container">
+    <div className="product-container">
          <div className="product-image">
             <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/f2d9229b65c248488c78af3b00851dab_9366/Runfalcon_3.0_Shoes_White_HP7557_01_standard.jpg" alt=" here is an image" />
          </div>

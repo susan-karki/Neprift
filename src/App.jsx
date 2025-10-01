@@ -5,6 +5,7 @@ import Login from './pages/auth/component/Login'
 import Register from './pages/auth/component/Register'
 import Product from './pages/webPage/components/Product'
 import Singleproduct from './pages/webPage/components/singleProduct'
+import CartPage from './pages/webPage/components/CartPage'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path = '/register' element ={<Register/>} />
           <Route path = '/product' element ={<Product/>} />
           <Route path = '/singleproduct' element ={<Singleproduct/>} />
+          <Route path = '/cartpage' element ={<CartPage/>} />
 
 
 
