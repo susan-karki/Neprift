@@ -34,10 +34,12 @@ ul li{
 .search-box{
     display : flex;
     align-items : center;
-    background : rgb(0, 0, 0);
+    /* background : rgb(0, 0, 0); */
+    background: #ffffff;
     opacity: 0.7;
     padding : 10Px 20px;
     border-radius: 50px;
+    border: 1px solid #ccc;
 
 }
 .search-box input {
@@ -45,7 +47,7 @@ ul li{
     background : transparent;
     border: 0;
     outline : 0;
-    color: whitesmoke;
+    color: rgb(0, 0, 0);
     font-size : 19px;
     max-width : 300px;
 

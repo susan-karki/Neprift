@@ -22,7 +22,7 @@ const Navbar = () => {
       </ul> */}
       <div className="search-box">
         <input type="text" placeholder = 'search' />
-        <img src={search_icon_light} alt="" />
+        <img src={search_icon_dark} alt="" />
       </div>
       <ul>
         <Link to = '/'>

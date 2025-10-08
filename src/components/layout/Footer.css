@@ -1,0 +1,26 @@
+/* body{
+    background-color: rgb(68, 62,54);
+} */
+.footer{
+    /* background-color: black; */
+    background : gainsboro;
+    /* color:antiquewhite; */
+    color: rgb(12, 12, 12);
+    padding: 20px;
+    margin-top: 550px;
+    display: flex;
+    justify-content: space-around;
+}
+.section{
+    width:30%;
+    text-align: left;
+}
+.sectionh3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.section p{
+    font-size: 14px;
+    margin: 5px 0;
+        
+    }

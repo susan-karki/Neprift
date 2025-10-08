@@ -6,7 +6,7 @@ import Card from './card/Card'
 const Home = () => {
   return (
     <Layout>
-      <div>
+      <div className='container-card'>
         <Card/>
         <Card/>
         <Card/>
@@ -17,15 +17,7 @@ const Home = () => {
         <Card/>
         <Card/>
         <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+
       </div>
       
     </Layout>
