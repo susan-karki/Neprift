@@ -19,6 +19,8 @@
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.04);
   transition: 0.4s ease;
   margin: 0;
+  text-decoration: none;
+  color: inherit; 
 }
 
 .card:hover {
@@ -106,3 +108,8 @@
     /* background: linear-gradient(45deg, #fabd14, #eb9616); */
     background: rgb(22, 22, 244);
    } 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* ensures link can wrap block elements safely */
+}

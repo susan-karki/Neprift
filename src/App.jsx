@@ -6,6 +6,8 @@ import Register from './pages/auth/component/Register'
 import Product from './pages/webPage/components/Product'
 import Singleproduct from './pages/webPage/components/singleProduct'
 import CartPage from './pages/webPage/components/CartPage'
+import 'boxicons/css/boxicons.min.css';
+
 
 
 function App() {
