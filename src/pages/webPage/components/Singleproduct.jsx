@@ -1,6 +1,7 @@
 import React from 'react'
 import './singleproduct.css'
 import Layout from '../../../components/layout/Layout'
+import { Link } from 'react-router-dom'
 
 const Singleproduct = () => {
   return (
@@ -17,7 +18,7 @@ const Singleproduct = () => {
             <div className="product-actions">
                 <label htmlFor="Quantity">Quantity</label>
                 <input type="number" id = 'Quantity' name = 'Quantity'  value = '1' min = '1'/>
-                <button className="addtocart">Add to Cart</button>
+                <Link to = '/cartpage'><button className="addtocart">Add to Cart</button></Link>
                 <button className="buy">Buy</button>
             </div>
             <div className="category">Category : <span>Shoes</span></div>

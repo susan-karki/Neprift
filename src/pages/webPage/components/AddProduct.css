@@ -1,0 +1,184 @@
+.addproduct-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 160px); /* Space for navbar + footer */
+    background: #ffffff;
+}
+
+/* Main card */
+.addproduct-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1000px;
+    max-width: 95%;
+    background-color: rgb(240, 235, 235);
+    border-radius: 12px;
+    padding: 30px 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.addTitle {
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    color: #000;
+}
+
+/* Two-column grid */
+.inputsection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+    margin-bottom: 20px;
+}
+
+/* Each input box */
+.addinput {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background: #eaeaea;
+    border-radius: 6px;
+    padding: 0 20px;
+}
+
+/* Label + input */
+.addinput label {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 120px;
+    color: #000;
+}
+
+.addinput input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #910505;
+    font-size: 18px;
+}
+
+/* ✅ Center the Condition field in middle bottom row */
+.conditions {
+    grid-column: span 2; /* Makes it take full row */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;
+    background: #eaeaea;
+    border-radius: 6px;
+    height: 60px;
+    padding: 0 20px;
+    width: 50%; /* same width as one input */
+    margin: 0 auto 20px auto; /* center within the grid */
+}
+
+.conditions label {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 15px;
+    color: #000;
+}
+
+.conditions select {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #910505;
+    font-size: 18px;
+}
+
+/* Buttons */
+.productbutton-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.productButtonAdd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 55px;
+    color: #fff;
+    background: rgb(36, 36, 240);
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.productButtonAdd:hover {
+    background: rgb(60, 60, 255);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+    .addproduct-card {
+        width: 95%;
+        height: auto;
+    }
+
+    .inputsection {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .addinput {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 15px;
+    }
+
+    .addinput label {
+        width: 100%;
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+
+    .addinput input {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .conditions {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        height: auto;
+    }
+
+    .conditions label {
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+
+    .conditions select {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .productbutton-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .productButtonAdd {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+    }
+}
