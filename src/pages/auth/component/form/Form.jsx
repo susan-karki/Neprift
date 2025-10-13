@@ -66,6 +66,16 @@ const Form = ({type}) => {
         </div>
         {action === "Login"? (<div></div>) : (
         <>
+        <div className="phone-address-row">
+          <div className="phoneNumber">
+            <label htmlFor="">Phone Number</label>
+            <input type="tel"  placeholder='Your Phone_Number' required/>
+          </div>
+          <div className="RegAddress">
+            <label htmlFor="">Address</label>
+            <input type="text" placeholder='Your Address' required/>
+          </div>
+        </div>
         <div className="birthday-gender-row">
           <div className="birthday">
             <label htmlFor="birthday">Birthday</label>

@@ -111,5 +111,5 @@
 .card-link {
   text-decoration: none;
   color: inherit;
-  display: block; /* ensures link can wrap block elements safely */
+  display: block; 
 }

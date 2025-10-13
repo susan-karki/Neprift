@@ -11,27 +11,27 @@ const AddProduct = () => {
             <div className="inputsection">
                 <div className="addinput">
                    <label htmlFor="">Product</label>
-                    <input type="text" />
+                    <input type="text" required />
                 </div>
                 <div className="addinput">
                     <label htmlFor="">category</label>
-                    <input type="text" />
+                    <input type="text" required/>
                 </div>
                  <div className="addinput">
                     <label htmlFor="">category</label>
-                    <input type="file" />
+                    <input type="file" required/>
                 </div>
                 <div className="addinput">
                     <label htmlFor="">price</label>
-                    <input type="number" />
+                    <input type="number" required/>
                 </div>
                 <div className="addinput">
                     <label htmlFor="">Description</label>
-                    <input type="text" />
+                    <input type="text" required/>
                 </div>
                  <div className="addinput">
                     <label htmlFor="">Seller</label>
-                    <input type="text" />
+                    <input type="text"  required/>
                 </div>   
                 <div className="conditions">
                  <label htmlFor="condition">Condition</label>

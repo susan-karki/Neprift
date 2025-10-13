@@ -8,6 +8,7 @@ import Singleproduct from './pages/webPage/components/singleProduct'
 import CartPage from './pages/webPage/components/CartPage'
 import 'boxicons/css/boxicons.min.css';
 import AddProduct from './pages/webPage/components/AddProduct'
+import About from './pages/webPage/components/About'
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path = '/singleproduct' element ={<Singleproduct/>} />
           <Route path = '/cartpage' element ={<CartPage/>} />
           <Route path = '/addproduct' element ={<AddProduct/>} />
+          <Route path = '/about' element ={<About/>} />
 
 
 

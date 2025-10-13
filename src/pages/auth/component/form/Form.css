@@ -99,7 +99,7 @@
     background-color: #EAEAEA;
     color : #676767
 }
-/* === Birthday & Gender side by side === */
+
 .birthday-gender-row {
   display: flex;
   justify-content: center;
@@ -108,7 +108,6 @@
   width: 480px;
 }
 
-/* Birthday and Gender – no gray background */
 .birthday,
 .gender {
   flex: 1;
@@ -117,18 +116,14 @@
   align-items: flex-start;
 }
 
-/* Label styling */
 .birthday label,
 .gender label {
   font-size: 16px;
   font-weight: 600;
   color: #333;
-  /* originally 6 */
   margin-bottom: 2px;    
   margin-left: 5px;
 }
-
-/* Inputs and selects clean look */
 .birthday input,
 .gender select {
   width: 100%;
@@ -141,28 +136,24 @@
   font-size: 15px;
   outline: none;
   transition: all 0.2s ease;
-  /* they were not orginally here */
   margin-top: 2px;
   margin-bottom: 2px;
 }
 
-/* Focus effect */
 .birthday input:focus,
 .gender select:focus {
   border-color: blue;
   box-shadow: 0 0 3px rgba(0, 0, 255, 0.3);
 }
 
-/* === Role styling - clean white like Birthday, centered === */
 .role {
   width: 480px;
-  margin:0px auto 0 auto; /* center below birthday-gender row */
+  margin:0px auto 0 auto; 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* Label */
 .role label {
   font-size: 16px;
   font-weight: 600;
@@ -171,19 +162,18 @@
   margin-left: 5px;
 }
 
-/* Select input */
 .role select {
   width: 100%;
   height: 45px;
   padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  background:#eaeaea; /* clean white */
+  background:#eaeaea; 
   color: #555;
   font-size: 15px;
   outline: none;
   transition: all 0.2s ease;
-  appearance: none; /* removes default arrow style */
+  appearance: none; 
   background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='10' height='6' xmlns='http://www.w3.org/2000/svg'><path fill='gray' d='M0 0l5 6 5-6z'/></svg>");
   background-repeat: no-repeat;
   background-position: right 15px center;
@@ -191,7 +181,6 @@
   cursor: pointer;
 }
 
-/* Focus effect */
 .role select:focus {
   border-color: blue;
   box-shadow: 0 0 3px rgba(0, 0, 255, 0.3);
@@ -199,3 +188,51 @@
 
 
 
+/* phone number and address in same row */
+.phone-address-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: auto;
+  width: 480px;
+}
+
+/* individual input boxes */
+.phoneNumber,
+.RegAddress {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.phoneNumber label,
+.RegAddress label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2px;
+  margin-left: 5px;
+}
+
+.phoneNumber input,
+.RegAddress input {
+  width: 100%;
+  height: 45px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #eaeaea;
+  color: #555;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.phoneNumber input:focus,
+.RegAddress input:focus {
+  border-color: blue;
+  box-shadow: 0 0 3px rgba(0, 0, 255, 0.3);
+}

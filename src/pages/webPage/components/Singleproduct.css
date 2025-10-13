@@ -1,16 +1,11 @@
-/* body{
-    display : flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #fcfcfc;
-} */
+
 .product-container{
     display : flex;
     flex-wrap: wrap;
     max-width: 1200px;
     width : 90%;
-    background-color: rgb(56, 55, 55);
+    /* background-color: rgb(56, 55, 55); */
+    background-color: rgb(168, 166, 166);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
@@ -105,7 +100,6 @@
     color : #fff;
     margin-top : 20px;
 }
-/* responsive */
 @media (max-width : 768px){
     .container{
         flex-direction: column;
