@@ -9,6 +9,7 @@ import CartPage from './pages/webPage/components/CartPage'
 import 'boxicons/css/boxicons.min.css';
 import AddProduct from './pages/webPage/components/AddProduct'
 import About from './pages/webPage/components/About'
+import Payment from './pages/webPage/components/Payment'
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path = '/cartpage' element ={<CartPage/>} />
           <Route path = '/addproduct' element ={<AddProduct/>} />
           <Route path = '/about' element ={<About/>} />
+          <Route path = '/payment' element ={<Payment/>} />
 
 
 

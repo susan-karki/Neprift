@@ -28,12 +28,13 @@
     margin-top : 30px
 }
 .text{
-    color : blue;
+    color : rgb(238, 176, 6);
+    /* color : #f10b0b; */
     font-size : 48px;
     font-weight : 700px
 }
 .underline{
-    background : blue;
+    background : #48dd0c;
     width : 61px;
     height : 6px;
     border-radius: 9px;
@@ -89,7 +90,8 @@
     width : 220px;
     height : 59px;
     color : #fff;
-    background : blue;
+    background : #995503;
+    /* background : blue; */
     border-radius: 50px;
     font-size : 19px;
     font-weight : 700;

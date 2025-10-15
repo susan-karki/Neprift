@@ -67,7 +67,7 @@
     border-radius: 5px;
 }
 .addtocart{
-    background-color: blue;
+    background-color: #eebe80;
     color : #fff;
     padding : 10px 20px;
     border : none;
@@ -78,11 +78,11 @@
 }
 .addtocart:hover{
     background-color: white;
-    color: blue;
+    color: #f08f08;
     border: 2px solid #fff;
 }
 .buy{
-    background-color: blue;
+    background-color: #eebe80;
     color : #fff;
     padding : 10px 20px;
     border : none;
@@ -93,7 +93,7 @@
 }
 .buy:hover{
     background-color: white;
-    color: blue;
+    color: #f08f08;
     border: 2px solid #fff;
 }
 .category{

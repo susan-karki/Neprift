@@ -103,7 +103,8 @@
     width: 200px;
     height: 55px;
     color: #fff;
-    background: rgb(36, 36, 240);
+    background: #e09f2e;
+    /* background: rgb(36, 36, 240); */
     border-radius: 50px;
     font-size: 18px;
     font-weight: 700;
@@ -113,7 +114,8 @@
 }
 
 .productButtonAdd:hover {
-    background: rgb(60, 60, 255);
+    background: #e6c691;
+    /* background: rgb(60, 60, 255); */
 }
 
 @media (max-width: 900px) {

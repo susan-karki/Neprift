@@ -106,7 +106,8 @@
     font-weight: 600;
     border-radius: 12px;
     /* background: linear-gradient(45deg, #fabd14, #eb9616); */
-    background: rgb(22, 22, 244);
+    /* background: rgb(248, 219, 1); */
+    background:   #f0ba79;
    } 
 .card-link {
   text-decoration: none;
