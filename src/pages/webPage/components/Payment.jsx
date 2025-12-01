@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Payment.css';
 import { v4 as uuidv4 } from "uuid";
 import CryptoJS from "crypto-js";
+import Layout from '../../../components/layout/Layout'
 
 const Payment = () => {
   const [formData, setformData] = useState({
@@ -41,6 +42,7 @@ const Payment = () => {
   };
 
   return (
+    <Layout>
     <div className="paymentcontainer">
     <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST">
         <h1>Checkout</h1>
@@ -66,16 +68,30 @@ const Payment = () => {
       <input type="hidden" name="signed_field_names" value={formData.signed_field_names} />
       <input type="hidden" name="signature" value={formData.signature} />
        <div className="field">
-        <label htmlFor="">First Name</label>
+        <label htmlFor=""> Full Name</label>
         <input type="text" />
        </div>
       <div className="field">
-        <label htmlFor="">Last Name</label>
+        <label htmlFor=""> Email Address</label>
+        <input type="email" />
+       </div>
+      <div className="field">
+        <label htmlFor="">Phone Number</label>
+        <input type="tel" />
+      </div>
+      <div className="field">
+        <label htmlFor="">Address</label>
         <input type="text" />
       </div>
+      <div className="field">
+        <label htmlFor="">Password</label>
+        <input type="password" />
+      </div>
+      
       <input  className ='btn'type="submit" value="Pay with E-Sewa" />
     </form>
     </div>
+    </Layout>
   );
 };
 

@@ -28,7 +28,8 @@
     margin-top : 30px
 }
 .text{
-    color : rgb(238, 176, 6);
+    color : rgb(215, 8, 8);
+    /* color : rgb(238, 176, 6); */
     /* color : #f10b0b; */
     font-size : 48px;
     font-weight : 700px
@@ -75,7 +76,7 @@
     font-size : 18px
 }
 .forget-password span {
-    color : blue;
+    color : rgb(49, 182, 9);
     cursor : pointer;
 }
 .submit-container{
@@ -90,7 +91,8 @@
     width : 220px;
     height : 59px;
     color : #fff;
-    background : #995503;
+    /* background : #995503; */
+    background : #f8a23a;
     /* background : blue; */
     border-radius: 50px;
     font-size : 19px;

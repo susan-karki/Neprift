@@ -17,9 +17,8 @@ const Home = () => {
         <Card/>
         <Card/>
         <Card/>
-
       </div>
-      
+        
     </Layout>
     
    
@@ -27,3 +26,5 @@ const Home = () => {
 }
 
 export default Home
+
+

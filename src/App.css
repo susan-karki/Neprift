@@ -1,0 +1,68 @@
+/* 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background: #222;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 1rem;
+  z-index: 100;
+  position: relative;
+}
+
+.footer {
+  background: #222;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 1rem;
+  z-index: 100;
+  position: relative; 
+}
+
+.main-content {
+  flex: 1; 
+  position: relative; 
+  padding: 2rem;
+  background: white; 
+  z-index: 0;
+}
+
+
+.rgb-sides::before,
+.rgb-sides::after {
+  content: "";
+  position: fixed;   
+  top: 0;
+  width: 8px;           
+  height: 100vh;      
+  background: linear-gradient(
+    to bottom,
+    red, orange, yellow, green, cyan, blue, violet, red
+  );
+  background-size: 400% 400%;
+  animation: rgbFlow 8s linear infinite;
+  z-index: 50;          
+  border-radius: 4px;    
+  filter: blur(3px);     
+  opacity: 0.85;
+}
+
+.rgb-sides::before { left: 0; }   
+.rgb-sides::after { right: 0; }    
+
+
+@keyframes rgbFlow {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.main-content p {
+  margin-bottom: 1rem;
+} */
+

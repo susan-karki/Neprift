@@ -114,3 +114,12 @@
   color: inherit;
   display: block; 
 }
+.card .card-content .price {
+  color: #e39f00;
+  font-size: 20px;   
+  font-weight: 600;            
+  margin: 5px 0 10px;          
+  text-align: left;            
+  letter-spacing: 0.5px;       
+}
+

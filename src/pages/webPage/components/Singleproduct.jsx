@@ -17,9 +17,9 @@ const Singleproduct = () => {
             <p className="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat a numquam maiores, dignissimos deserunt architecto culpa alias neque natus impedit similique sint esse beatae cupiditate atque ea repellat minus quidem.</p>
             <div className="product-actions">
                 <label htmlFor="Quantity">Quantity</label>
-                <input type="number" id = 'Quantity' name = 'Quantity'  value = '1' min = '1'/>
+                <input type="number" id = 'Quantity' name = 'Quantity' /* value = '1' min = '1'*/ />
                 <Link to = '/cartpage'><button className="addtocart">Add to Cart</button></Link>
-                <button className="buy">Buy</button>
+                <Link to = '/payment'><button className="buy">Buy Now</button></Link>
             </div>
             <div className="category">Category : <span>Shoes</span></div>
          </div>

@@ -18,6 +18,7 @@ const Card = () => {
        <div className="card-content">
         <h3>Luffy Action Figure</h3>
         <p>This is Monkey d luffy the man who is gonna be a king of Pirates</p>
+        <h4 className="price">Rs. 4000</h4>
        </div>
        </Link>
        <div className="card-content">

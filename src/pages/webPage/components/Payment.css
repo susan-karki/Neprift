@@ -7,11 +7,12 @@
     background-color: white;
 }
 form{
-    background-color: rgb(202, 202, 202);
-    width : 350px;
+    background-color: rgba(185, 181, 181, 0.356);
+    width : 550px;
     padding : 1.5rem;
     border-radius: 1rem;
-    box-shadow: 10px 10px, 10px rgb(206, 206, 206)
+    /* box-shadow: 10px 10px, 10px rgb(206, 206, 206) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .field {
     display: flex;
@@ -35,8 +36,9 @@ form{
 }
 .btn{
     padding: 10px 15px;
-    background-color: rgb(186, 150, 5);
-    color: white;
+    background-color: rgb(81, 239, 14);
+    color: rgb(255, 0, 0);
     width: 100%;
     margin-top: 1rem;
+    border-color: rgb(179, 255, 0);
 }
