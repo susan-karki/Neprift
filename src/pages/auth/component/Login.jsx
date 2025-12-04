@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './form/Form';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { baseUrl } from '../../../config'; // Make sure this path is correct
+import { baseUrl } from '../../../config'; 
 
 const Login = () => {
   const navigate = useNavigate();
