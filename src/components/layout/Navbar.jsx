@@ -33,11 +33,11 @@ const Navbar = () => {
         <li>Cart</li>
         </Link>
 
-        <Link to = '/register'> 
+        <Link to = '/auth/register'> 
         <li>Register</li>
         </Link>
 
-        <Link to = '/login'>
+        <Link to = '/auth/login'>
         <li>Login</li>
         </Link>
       </ul>

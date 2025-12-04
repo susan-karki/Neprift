@@ -1,3 +1,5 @@
+
+/* 
 .paymentcontainer{
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
@@ -5,13 +7,24 @@
     justify-content: center;
     align-items: center;
     background-color: white;
+} */
+
+.paymentcontainer {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh; /* allows scrolling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* let body background show through */
+  padding: 2rem;
+  box-sizing: border-box;
 }
+
 form{
     background-color: rgba(185, 181, 181, 0.356);
     width : 550px;
     padding : 1.5rem;
     border-radius: 1rem;
-    /* box-shadow: 10px 10px, 10px rgb(206, 206, 206) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .field {
@@ -42,3 +55,5 @@ form{
     margin-top: 1rem;
     border-color: rgb(179, 255, 0);
 }
+
+

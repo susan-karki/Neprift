@@ -1,0 +1,268 @@
+/* Basic reset for this component only */
+.admin_container,
+.admin_container * {
+  box-sizing: border-box;
+}
+
+/* Layout variables */
+:root {
+  --admin-sidebar-width: 230px;
+  --admin-navbar-height: 60px;
+  --admin-accent: #b84d55; /* sidebar color */
+  --admin-accent-dark: #a2434b;
+  --admin-muted: #f4f4f4;
+}
+
+/* Container */
+.admin_container {
+  min-height: 100vh;
+  background: var(--admin-muted);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #222;
+}
+
+/* -------------------------
+   Sidebar (fixed left)
+   ------------------------- */
+.admin_sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--admin-sidebar-width);
+  background: var(--admin-accent);
+  color: #fff;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 20;
+  overflow: auto;
+}
+
+/* Brand section */
+.admin_brand_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.admin_brand {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+}
+
+/* Navigation list */
+.admin_navmenu {
+  margin-top: 8px;
+  flex: 1;
+}
+
+.admin_menu_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin_menu_item {
+  margin: 0;
+}
+
+/* link style - full width clickable */
+.admin_menu_item a {
+  display: inline-block;
+  width: 100%;
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  padding: 10px 8px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.admin_menu_item a:hover,
+.admin_menu_item a:focus {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  outline: none;
+}
+
+/* -------------------------
+   Navbar (fixed top, right of sidebar)
+   ------------------------- */
+.admin_navbar {
+  position: fixed;
+  top: 0;
+  left: var(--admin-sidebar-width);
+  right: 0;
+  height: var(--admin-navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  z-index: 30;
+}
+
+/* left side of navbar */
+.admin_nav_left {
+  font-size: 14px;
+  color: #444;
+}
+
+/* right side */
+.admin_nav_right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* profile circle */
+.admin_profile_circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ff8a33;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* profile name */
+.admin_profile_name {
+  font-size: 14px;
+  color: #333;
+}
+
+/* -------------------------
+   Main content
+   ------------------------- */
+.admin_content_area {
+  margin-left: var(--admin-sidebar-width);
+  margin-top: var(--admin-navbar-height);
+  padding: 28px;
+  min-height: calc(100vh - var(--admin-navbar-height));
+}
+
+/* page title */
+.admin_page_title {
+  margin: 8px 0 14px;
+  font-size: 36px;
+  line-height: 1.05;
+  color: #1e1e1e;
+}
+
+.admin_lead {
+  margin: 0 0 20px;
+  color: #555;
+}
+
+/* -------------------------
+   Dashboard row and boxes (VERTICAL STACKED)
+   ------------------------- */
+.admin_dashboard_row {
+  display: flex;
+  flex-direction: column; /* vertical stacking */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Chart box (Line, Vertical, Horizontal) */
+.admin_sales_chart_box {
+  width: 100%;
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  height: 280px; /* fixed height */
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden; /* prevent scroll */
+}
+
+.admin_sales_chart_box canvas {
+  flex: 1;
+  height: 100%; /* fill parent height */
+}
+
+/* Top selling item box */
+.admin_top_item_box {
+  width: 100%;
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  height: 180px; /* fixed height */
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Section title */
+.admin_section_title {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Big number */
+.admin_big_number {
+  font-size: 28px;
+  color: #ff8a33;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* Item label */
+.admin_item_label {
+  font-size: 16px;
+  color: #444;
+}
+
+/* -------------------------
+   Responsive adjustments
+   ------------------------- */
+@media (max-width: 900px) {
+  :root {
+    --admin-sidebar-width: 64px;
+  }
+
+  .admin_brand {
+    font-size: 13px;
+  }
+
+  .admin_menu_list a {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .admin_page_title {
+    font-size: 28px;
+  }
+
+  .admin_profile_name {
+    display: none; /* hide text on very small widths */
+  }
+
+  .admin_dashboard_row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .admin_sales_chart_box,
+  .admin_top_item_box {
+    height: auto; /* flexible height on mobile */
+  }
+}

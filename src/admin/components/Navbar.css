@@ -1,0 +1,33 @@
+/* .admin_navbar {
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin_nav_left {
+  color: #555;
+  font-size: 15px;
+}
+
+.admin_nav_right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin_profile_circle {
+  width: 35px;
+  height: 35px;
+  background: #ff7a00;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+} */

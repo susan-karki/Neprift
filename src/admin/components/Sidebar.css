@@ -1,0 +1,29 @@
+/* .admin_sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #d1495b;
+  padding: 20px;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.admin_brand {
+  margin-bottom: 30px;
+}
+
+.admin_sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin_sidebar li {
+  padding: 12px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.admin_sidebar li:hover {
+  opacity: 0.7;
+} */
