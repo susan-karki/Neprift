@@ -84,15 +84,14 @@ import { Navigate } from "react-router-dom";
 import Home from './pages/webPage/components/Home'
 import Login from './pages/auth/component/Login'
 import Register from './pages/auth/component/Register'
-import Product from './pages/webPage/components/Product'
 import Singleproduct from './pages/webPage/components/singleProduct'
 import CartPage from './pages/webPage/components/CartPage'
 import AddProduct from './pages/webPage/components/AddProduct'
 import About from './pages/webPage/components/About'
 import Payment from './pages/webPage/components/Payment'
 import Submit from './pages/webPage/components/Submit'
-import Update from './pages/webPage/components/Update'
-import Delete from './pages/webPage/components/Delete'
+// import Update from './pages/webPage/components/Update'
+// import Delete from './pages/webPage/components/Delete'
 
 import AdminLayout from './admin/components/AdminLayout'
 import Charts from './admin/components/Charts'
@@ -110,15 +109,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/register" element={<Register />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/product" element={<AddProduct />} />
         <Route path="/singleproduct" element={<Singleproduct />} />
         <Route path="/cartpage" element={<CartPage />} />
-        <Route path="/addproduct" element={<AddProduct />} />
         <Route path="/about" element={<About />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/submit" element={<Submit />} />
-        <Route path="/update" element={<Update />} />
-        <Route path="/delete" element={<Delete />} />
+        {/* <Route path="/update" element={<Update />} />
+        <Route path="/delete" element={<Delete />} /> */}
         {/* ADMIN PANEL ROUTES */}
         <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Navigate to="dashboard" replace />} />

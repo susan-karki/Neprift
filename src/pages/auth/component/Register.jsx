@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './form/Form';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { baseUrl } from '../../../config'; // Make sure baseUrl is correctly imported
+import { baseUrl } from '../../../config'; 
 
 const Register = () => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const Register = () => {
     try {
       const response = await axios.post(`${baseUrl}/auth/register`, data);
 
-      if (response.status === 201) {
+      if (response.status === 200) {
         navigate('/auth/login');
       } else {
         alert("Registration Failed");
