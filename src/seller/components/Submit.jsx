@@ -79,7 +79,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import AddProduct from "./AddProduct";
-import API from "../../../http/API"; // adjust relative path if needed
+// import API from "../../http/API"; // adjust relative path if needed
 
 const Submit = () => {
   const navigate = useNavigate();

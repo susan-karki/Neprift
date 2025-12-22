@@ -1,4 +1,4 @@
-.charts-page {
+/* .charts-page {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@
   padding-bottom: 30px;
 }
 
-/* Dashboard Title */
+
 .dashboard_title {
   font-size: 28px;
   font-weight: 700;
@@ -14,20 +14,19 @@
   margin-bottom: 20px;
 }
 
-/* 2 charts side-by-side */
+
 .charts_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 24px;
 }
 
-/* Chart container */
 .chart_box {
   background: #fff;
   padding: 18px;
   border-radius: 12px;
   border: 1px solid #eee;
-  height: 350px; /* slightly bigger for charts */
+  height: 350px; 
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -39,13 +38,11 @@
   font-weight: 600;
 }
 
-/* Ensure canvas fills container */
 .chart_box canvas {
   width: 100% !important;
   height: calc(100% - 30px) !important;
 }
 
-/* ---- TOP CUSTOMERS ---- */
 .top_customers_box {
   background: #fff;
   padding: 20px;
@@ -99,9 +96,104 @@
   color: #666;
 }
 
-/* Responsive adjustments */
 @media (max-width: 900px) {
   .charts_grid {
+    grid-template-columns: 1fr;
+  }
+} */
+.seller-charts-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+.seller-dashboard_title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+.seller-charts_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.seller-chart_box {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.seller-chart_box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* TOP CUSTOMERS */
+.seller-top_customers_box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.seller-top_title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.seller-customers_list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.seller-customer_row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fafafa;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.seller-customer_avatar {
+  width: 40px;
+  height: 40px;
+  background: #ff8a33;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: 600;
+}
+
+.seller-customer_name {
+  font-weight: 600;
+}
+
+.seller-customer_stats {
+  font-size: 13px;
+  color: #666;
+}
+
+.seller-loading {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+@media (max-width: 900px) {
+  .seller-charts_grid {
     grid-template-columns: 1fr;
   }
 }

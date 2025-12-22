@@ -1207,11 +1207,277 @@
 // export default AddProduct;
 
 
+// import React, { useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+// import "./AddProduct.css";
+// import Layout from "../../../components/layout/Layout";
+// import API from "../../../http/API"; // axios instance with baseURL
+
+// const AddProduct = ({ productData, onSubmit, onUpdate, onDelete }) => {
+//   const navigate = useNavigate();
+
+//   const [data, setData] = useState({
+//     id: "",
+//     title: "",
+//     category: "",
+//     description: "",
+//     image: null,
+//     price: "",
+//     seller: "",
+//     condition: "excellent",
+//   });
+
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState(null);
+
+//   // Check authentication on mount
+//   useEffect(() => {
+//     const token = localStorage.getItem("token1");
+//     if (!token) {
+//       alert("Please login first to access this page.");
+//       navigate("/auth/login");
+//     }
+//   }, [navigate]);
+
+//   useEffect(() => {
+//     if (productData) setData({ ...productData });
+//   }, [productData]);
+
+//   const handleChange = (e) => {
+//     const { name, value, files } = e.target;
+//     setData({ ...data, [name]: name === "image" ? files[0] : value });
+//   };
+
+//   const createFormData = () => {
+//     const formData = new FormData();
+//     const productRequest = {
+//       name: data.title,
+//       categoryId: Number(data.category),
+//       userId: Number(data.seller),
+//       description: data.description,
+//       price: Number(data.price),
+//       quantity: 1,
+//     };
+
+//     formData.append(
+//       "productRequest",
+//       new Blob([JSON.stringify(productRequest)], { type: "application/json" })
+//     );
+
+//     if (data.image) formData.append("imageFile", data.image);
+
+//     return formData;
+//   };
+
+//   // Utility function to get token and block unauthorized actions
+//   const getAuthToken = () => {
+//     const token = localStorage.getItem("token1");
+//     if (!token) {
+//       alert("You must be logged in to perform this action.");
+//       navigate("/auth/login");
+//       return null;
+//     }
+//     return token;
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     const token = getAuthToken();
+//     if (!token) return; // stop execution if not logged in
+
+//     setLoading(true);
+//     setError(null);
+
+//     try {
+//       const formData = createFormData();
+//       const response = await API.post("/product", formData, {
+//         headers: { Authorization: `Bearer ${token}` },
+//       });
+
+//       alert("Product added successfully!");
+//       if (onSubmit) onSubmit(response.data);
+
+//       setData({
+//         id: "",
+//         title: "",
+//         category: "",
+//         description: "",
+//         image: null,
+//         price: "",
+//         seller: "",
+//         condition: "excellent",
+//       });
+//     } catch (err) {
+//       console.error("Error adding product:", err);
+//       setError(err.response?.data?.message || err.message);
+//       if (err.response?.status === 401) {
+//         alert("Session expired. Please login again.");
+//         localStorage.removeItem("token1");
+//         navigate("/auth/login");
+//       } else {
+//         alert(err.response?.data?.message || err.message);
+//       }
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleUpdate = async () => {
+//     if (!data.id) return alert("Cannot update: no product ID");
+//     const token = getAuthToken();
+//     if (!token) return;
+
+//     setLoading(true);
+//     setError(null);
+
+//     try {
+//       const formData = createFormData();
+//       const response = await API.put(`/product/${data.id}`, formData, {
+//         headers: { Authorization: `Bearer ${token}` },
+//       });
+
+//       alert("Product updated successfully!");
+//       if (onUpdate) onUpdate(response.data);
+//     } catch (err) {
+//       console.error("Error updating product:", err);
+//       setError(err.response?.data?.message || err.message);
+//       if (err.response?.status === 401) {
+//         alert("Session expired. Please login again.");
+//         localStorage.removeItem("token1");
+//         navigate("/auth/login");
+//       } else {
+//         alert(err.response?.data?.message || err.message);
+//       }
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleDelete = async () => {
+//     if (!data.id) return alert("Cannot delete: no product ID");
+//     const token = getAuthToken();
+//     if (!token) return;
+
+//     if (!window.confirm("Are you sure you want to delete this product?")) return;
+
+//     setLoading(true);
+//     setError(null);
+
+//     try {
+//       await API.delete(`/product/${data.id}`, {
+//         headers: { Authorization: `Bearer ${token}` },
+//       });
+
+//       alert("Product deleted successfully!");
+//       if (onDelete) onDelete(data);
+
+//       setData({
+//         id: "",
+//         title: "",
+//         category: "",
+//         description: "",
+//         image: null,
+//         price: "",
+//         seller: "",
+//         condition: "excellent",
+//       });
+//     } catch (err) {
+//       console.error("Error deleting product:", err);
+//       setError(err.response?.data?.message || err.message);
+//       if (err.response?.status === 401) {
+//         alert("Session expired. Please login again.");
+//         localStorage.removeItem("token1");
+//         navigate("/auth/login");
+//       } else {
+//         alert(err.response?.data?.message || err.message);
+//       }
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <Layout>
+//       <div className="addproduct-container">
+//         <div className="addproduct-card">
+//           <h1 className="addTitle">Add or Manage Your Product</h1>
+
+//           {error && <div className="error-message">{error}</div>}
+
+//           <form onSubmit={handleSubmit}>
+//             <div className="inputsection">
+//               {["title", "category", "price", "seller"].map((field) => (
+//                 <div className="addinput" key={field}>
+//                   <label>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
+//                   <input
+//                     type={field === "price" ? "number" : "text"}
+//                     name={field}
+//                     value={data[field]}
+//                     onChange={handleChange}
+//                     required
+//                     disabled={loading}
+//                   />
+//                 </div>
+//               ))}
+
+//               <div className="addinput">
+//                 <label>Image</label>
+//                 <input type="file" name="image" onChange={handleChange} disabled={loading} />
+//               </div>
+
+//               <div className="addinput">
+//                 <label>Description</label>
+//                 <textarea
+//                   name="description"
+//                   value={data.description}
+//                   onChange={handleChange}
+//                   required
+//                   disabled={loading}
+//                 />
+//               </div>
+
+//               <div className="conditions">
+//                 <label>Condition</label>
+//                 <select
+//                   name="condition"
+//                   value={data.condition}
+//                   onChange={handleChange}
+//                   disabled={loading}
+//                 >
+//                   <option value="excellent">Excellent</option>
+//                   <option value="good">Good</option>
+//                   <option value="fair">Fair</option>
+//                 </select>
+//               </div>
+//             </div>
+
+//             <div className="productbutton-container">
+//               <button className="productButtonAdd" type="submit" disabled={loading}>
+//                 {loading ? "Submitting..." : "Submit"}
+//               </button>
+//               <button className="productButtonAdd" type="button" onClick={handleUpdate} disabled={loading}>
+//                 {loading ? "Updating..." : "Update"}
+//               </button>
+//               <button className="productButtonAdd" type="button" onClick={handleDelete} disabled={loading}>
+//                 {loading ? "Deleting..." : "Delete"}
+//               </button>
+//             </div>
+//           </form>
+//         </div>
+//       </div>
+//     </Layout>
+//   );
+// };
+
+// export default AddProduct;
+
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./AddProduct.css";
-import Layout from "../../../components/layout/Layout";
-import API from "../../../http/API"; // axios instance with baseURL
+// import Layout from "../../../components/layout/Layout";
+// import API from "../../../http/API";
 
 const AddProduct = ({ productData, onSubmit, onUpdate, onDelete }) => {
   const navigate = useNavigate();
@@ -1230,11 +1496,10 @@ const AddProduct = ({ productData, onSubmit, onUpdate, onDelete }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Check authentication on mount
   useEffect(() => {
     const token = localStorage.getItem("token1");
     if (!token) {
-      alert("Please login first to access this page.");
+      toast.error("Please login first");
       navigate("/auth/login");
     }
   }, [navigate]);
@@ -1250,6 +1515,7 @@ const AddProduct = ({ productData, onSubmit, onUpdate, onDelete }) => {
 
   const createFormData = () => {
     const formData = new FormData();
+
     const productRequest = {
       name: data.title,
       categoryId: Number(data.category),
@@ -1269,33 +1535,33 @@ const AddProduct = ({ productData, onSubmit, onUpdate, onDelete }) => {
     return formData;
   };
 
-  // Utility function to get token and block unauthorized actions
   const getAuthToken = () => {
     const token = localStorage.getItem("token1");
     if (!token) {
-      alert("You must be logged in to perform this action.");
+      toast.error("You must be logged in");
       navigate("/auth/login");
       return null;
     }
     return token;
   };
 
+  // ✅ ADD PRODUCT
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = getAuthToken();
-    if (!token) return; // stop execution if not logged in
+    if (!token) return;
 
     setLoading(true);
     setError(null);
 
     try {
       const formData = createFormData();
-      const response = await API.post("/product", formData, {
+      const res = await API.post("/product", formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      alert("Product added successfully!");
-      if (onSubmit) onSubmit(response.data);
+      toast.success("Product added successfully");
+      onSubmit && onSubmit(res.data);
 
       setData({
         id: "",
@@ -1308,68 +1574,51 @@ const AddProduct = ({ productData, onSubmit, onUpdate, onDelete }) => {
         condition: "excellent",
       });
     } catch (err) {
-      console.error("Error adding product:", err);
-      setError(err.response?.data?.message || err.message);
-      if (err.response?.status === 401) {
-        alert("Session expired. Please login again.");
-        localStorage.removeItem("token1");
-        navigate("/auth/login");
-      } else {
-        alert(err.response?.data?.message || err.message);
-      }
+      toast.error(err.response?.data?.message || "Failed to add product");
+      setError(err.message);
     } finally {
       setLoading(false);
     }
   };
 
   const handleUpdate = async () => {
-    if (!data.id) return alert("Cannot update: no product ID");
+    if (!data.id) return toast.warning("No product selected");
     const token = getAuthToken();
     if (!token) return;
 
     setLoading(true);
-    setError(null);
 
     try {
       const formData = createFormData();
-      const response = await API.put(`/product/${data.id}`, formData, {
+      const res = await API.put(`/product/${data.id}`, formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      alert("Product updated successfully!");
-      if (onUpdate) onUpdate(response.data);
+      toast.success("Product updated successfully");
+      onUpdate && onUpdate(res.data);
     } catch (err) {
-      console.error("Error updating product:", err);
-      setError(err.response?.data?.message || err.message);
-      if (err.response?.status === 401) {
-        alert("Session expired. Please login again.");
-        localStorage.removeItem("token1");
-        navigate("/auth/login");
-      } else {
-        alert(err.response?.data?.message || err.message);
-      }
+      toast.error(err.response?.data?.message || "Update failed");
     } finally {
       setLoading(false);
     }
   };
 
   const handleDelete = async () => {
-    if (!data.id) return alert("Cannot delete: no product ID");
+    if (!data.id) return toast.warning("No product selected");
     const token = getAuthToken();
     if (!token) return;
 
     if (!window.confirm("Are you sure you want to delete this product?")) return;
 
     setLoading(true);
-    setError(null);
 
     try {
       await API.delete(`/product/${data.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      alert("Product deleted successfully!");
-      if (onDelete) onDelete(data);
+      toast.success("Product deleted successfully");
+      onDelete && onDelete(data);
 
       setData({
         id: "",
@@ -1382,22 +1631,14 @@ const AddProduct = ({ productData, onSubmit, onUpdate, onDelete }) => {
         condition: "excellent",
       });
     } catch (err) {
-      console.error("Error deleting product:", err);
-      setError(err.response?.data?.message || err.message);
-      if (err.response?.status === 401) {
-        alert("Session expired. Please login again.");
-        localStorage.removeItem("token1");
-        navigate("/auth/login");
-      } else {
-        alert(err.response?.data?.message || err.message);
-      }
+      toast.error(err.response?.data?.message || "Delete failed");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <Layout>
+    // <Layout>
       <div className="addproduct-container">
         <div className="addproduct-card">
           <h1 className="addTitle">Add or Manage Your Product</h1>
@@ -1408,7 +1649,7 @@ const AddProduct = ({ productData, onSubmit, onUpdate, onDelete }) => {
             <div className="inputsection">
               {["title", "category", "price", "seller"].map((field) => (
                 <div className="addinput" key={field}>
-                  <label>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
+                  <label>{field.toUpperCase()}</label>
                   <input
                     type={field === "price" ? "number" : "text"}
                     name={field}
@@ -1456,18 +1697,17 @@ const AddProduct = ({ productData, onSubmit, onUpdate, onDelete }) => {
                 {loading ? "Submitting..." : "Submit"}
               </button>
               <button className="productButtonAdd" type="button" onClick={handleUpdate} disabled={loading}>
-                {loading ? "Updating..." : "Update"}
+                Update
               </button>
               <button className="productButtonAdd" type="button" onClick={handleDelete} disabled={loading}>
-                {loading ? "Deleting..." : "Delete"}
+                Delete
               </button>
             </div>
           </form>
         </div>
       </div>
-    </Layout>
+    // </Layout>
   );
 };
 
 export default AddProduct;
-

@@ -1,0 +1,120 @@
+/* Reset */
+.sellerdash-container,
+.sellerdash-container * {
+  box-sizing: border-box;
+}
+
+:root {
+  --sellerdash-sidebar-width: 230px;
+  --sellerdash-navbar-height: 60px;
+  --sellerdash-accent: #938f8f;
+  --sellerdash-muted: #f4f6f6;
+}
+
+/* Container */
+.sellerdash-container {
+  min-height: 100vh;
+  background: var(--sellerdash-muted);
+  font-family: "Segoe UI", Arial;
+  color: #222;
+}
+
+/* Sidebar */
+.sellerdash-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sellerdash-sidebar-width);
+  background: var(--sellerdash-accent);
+  color: #fff;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 20;
+}
+
+.sellerdash-brand-wrap {
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.sellerdash-brand {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.sellerdash-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sellerdash-menu-item a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  opacity: 0.9;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.sellerdash-menu-item a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Navbar */
+.sellerdash-navbar {
+  position: fixed;
+  top: 0;
+  left: var(--sellerdash-sidebar-width);
+  right: 0;
+  height: var(--sellerdash-navbar-height);
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 30;
+}
+
+.sellerdash-nav-left {
+  font-size: 14px;
+  color: #444;
+}
+
+.sellerdash-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sellerdash-profile-circle {
+  width: 36px;
+  height: 36px;
+  background: #ff8a33;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sellerdash-profile-name {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Content Area */
+.sellerdash-content-area {
+  margin-left: var(--sellerdash-sidebar-width);
+  margin-top: var(--sellerdash-navbar-height);
+  padding: 24px;
+}

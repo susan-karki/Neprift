@@ -26,7 +26,6 @@
 // };
 
 // export default Login;
-
 import React from 'react';
 import Form from './form/Form';
 import { useNavigate } from 'react-router-dom';
@@ -41,9 +40,16 @@ const Login = () => {
       const response = await axios.post(`${baseUrl}/auth/login`, data);
 
       if (response.status === 200) {
-        // SAVE TOKEN CORRECTLY BASED ON API RESPONSE
+        // ✅ READ DATA FROM API RESPONSE
         const token = response.data.responseBody?.token;
+        const role  = response.data.responseBody?.role; // SELLER / CUSTOMER
+
+        // ✅ SAVE TO LOCAL STORAGE
         localStorage.setItem('token1', token);
+        localStorage.setItem('role', role);
+
+        // ✅ NOTIFY NAVBAR (VERY IMPORTANT)
+        window.dispatchEvent(new Event("authChange"));
 
         navigate('/');
       } else {

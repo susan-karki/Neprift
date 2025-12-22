@@ -32,13 +32,17 @@ function AdminLayout() {
             </li>
 
             <li className="admin_menu_item">
-              <Link to="/admin/policies">Terms & Conditions</Link>
+              <Link to="/admin/donate">Donations</Link>
             </li>
             
             <li className="admin_menu_item">
               <Link to="/admin/suggestions">Suggestions</Link>
             </li>
             
+            <li className="admin_menu_item">
+              <Link to="/admin/seller">user mgmt</Link>
+            </li>
+
             <li className="admin_menu_item">
               <Link to="/auth/register">Logout</Link>
             </li>
