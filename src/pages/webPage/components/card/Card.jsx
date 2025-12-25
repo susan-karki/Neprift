@@ -31,32 +31,118 @@
 // export default Card
 
 
-import React from 'react';
-import './Card.css';
-import { Link, useNavigate } from 'react-router-dom';
+// import React from 'react';
+// import './Card.css';
+// import { Link, useNavigate } from 'react-router-dom';
+
+// const Card = ({ product }) => {
+//   const navigate = useNavigate();
+
+//   const handleAddToCart = (e) => {
+//     e.stopPropagation();
+//     // Here you can add to cart API or localStorage logic
+//     navigate('/cartpage');
+//   };
+
+//   return (
+//     <div className="card">
+//       <Link to={`/singleproduct/${product.id}`} className="card-link">
+//         <div className="card-image">
+//           <img src={product.image} alt={product.name} />
+//           <i className="bx bx-star"></i>
+//         </div>
+//         <div className="card-content">
+//           <h3>{product.name}</h3>
+//           <p>{product.description}</p>
+//           <h4 className="price">Rs. {product.price}</h4>
+//         </div>
+//       </Link>
+
+//       <div className="card-content">
+//         <button className="add-to-cart" onClick={handleAddToCart}>
+//           Add To Cart
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Card;
+
+
+
+
+// import React from 'react';
+// import './Card.css';
+// import { Link, useNavigate } from 'react-router-dom';
+
+// const Card = ({ product }) => {
+//   const navigate = useNavigate();
+
+//   const handleAddToCart = (e) => {
+//     e.stopPropagation();
+//     // Call your cart API here if needed
+//     navigate('/cartpage');
+//   };
+
+//   return (
+//     <div className="card">
+//       <Link to={`/singleproduct/${product.id}`} className="card-link">
+//         <div className="card-image">
+//           <img src={product.image} alt={product.name} />
+//           <i className="bx bx-star"></i>
+//         </div>
+//         <div className="card-content">
+//           <h3>{product.name}</h3>
+//           <p>{product.description}</p>
+//           <h4 className="price">Rs. {product.price}</h4>
+//         </div>
+//       </Link>
+
+//       <div className="card-content">
+//         <button className="add-to-cart" onClick={handleAddToCart}>
+//           Add To Cart
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Card;
+
+
+
+import React from "react";
+import "./Card.css";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ product }) => {
   const navigate = useNavigate();
 
+  // Navigate to single product page
+  const handleCardClick = () => {
+    navigate(`/singleproduct/${product.id}`);
+  };
+
+  // Prevent navigation when clicking add to cart
   const handleAddToCart = (e) => {
     e.stopPropagation();
-    // Here you can add to cart API or localStorage logic
-    navigate('/cartpage');
+    // Add to cart API can be called here later
+    navigate("/cartpage");
   };
 
   return (
-    <div className="card">
-      <Link to={`/singleproduct/${product.id}`} className="card-link">
-        <div className="card-image">
-          <img src={product.image} alt={product.name} />
-          <i className="bx bx-star"></i>
-        </div>
-        <div className="card-content">
-          <h3>{product.name}</h3>
-          <p>{product.description}</p>
-          <h4 className="price">Rs. {product.price}</h4>
-        </div>
-      </Link>
+    <div className="card" onClick={handleCardClick} style={{ cursor: "pointer" }}>
+      <div className="card-image">
+        <img src={product.image} alt={product.name} />
+        <i className="bx bx-star"></i>
+      </div>
+
+      <div className="card-content">
+        <h3>{product.name}</h3>
+        <p>{product.description}</p>
+        <h4 className="price">Rs. {product.price}</h4>
+      </div>
 
       <div className="card-content">
         <button className="add-to-cart" onClick={handleAddToCart}>
@@ -68,3 +154,4 @@ const Card = ({ product }) => {
 };
 
 export default Card;
+

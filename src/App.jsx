@@ -139,7 +139,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/webPage/components/Home'
 import Login from './pages/auth/component/Login'
 import Register from './pages/auth/component/Register'
-import Singleproduct from './pages/webPage/components/singleProduct'
+// import Singleproduct from './pages/webPage/components/singleProduct'
 import CartPage from './pages/webPage/components/CartPage'
 // import AddProduct from './pages/webPage/components/AddProduct'
 import About from './pages/webPage/components/About'
@@ -163,6 +163,8 @@ import NepriftSuggestions from './seller/components/NepriftSuggestions.jsx'
 import NepriftPolicies from './seller/components/NepriftPolicies.jsx'
 import SellerDashboard from './seller/components/SellerDashboard.jsx'
 import AdminDonations from './admin/components/AdminDonations.jsx'
+import Singleproduct from './pages/webPage/components/Singleproduct.jsx'
+import ForgotPassword from './pages/auth/component/ForgotPassword.jsx'
 
 function App() {
   return (
@@ -187,8 +189,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/register" element={<Register />} />
+        <Route path="/auth/forgot-password" element={<ForgotPassword />} />
         {/* <Route path="/product" element={<AddProduct />} /> */}
-        <Route path="/singleproduct" element={<Singleproduct />} />
+        <Route path="/singleproduct/:id" element={<Singleproduct />} />
         <Route path="/cartpage" element={<CartPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/payment" element={<Payment />} />

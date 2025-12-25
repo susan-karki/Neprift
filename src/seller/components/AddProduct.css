@@ -585,7 +585,7 @@ html, body {
   }
 } */
 
-
+/* 
 
 .addproduct-container {
   display: flex;
@@ -732,4 +732,180 @@ html, body {
     width: 100%;
   }
 } 
- 
+  */
+
+
+
+  .addproduct-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 60px);
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.addproduct-card {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  max-width: 95%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 40px;
+  box-sizing: border-box;
+}
+
+.addTitle {
+  font-weight: 700;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #352802;
+}
+.inputsection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  margin-bottom: 20px;
+}
+
+.addinput {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background: #eaeaea;
+  border-radius: 6px;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.addinput label {
+  width: 120px;
+  font-size: 18px;
+  color: #000;
+}
+
+.addinput input,
+.addinput textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: #910505;
+}
+
+
+.addinput textarea {
+  height: 60px;
+  resize: none;
+  padding: 5px;
+}
+
+.addinput select {
+  flex: 1;
+  height: 35px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: #910505;
+  appearance: none;
+  cursor: pointer;
+}
+
+.conditions {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  background: #eaeaea;
+  border-radius: 6px;
+  height: 60px;
+  padding: 0 20px;
+  width: 100%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.conditions label {
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.conditions select {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: #910505;
+}
+
+.productbutton-container {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.productButtonAdd {
+  min-width: 160px;
+  height: 55px;
+  background: #e09f2e;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.productButtonAdd:hover {
+  background: #e6c691;
+}
+
+@media (max-width: 900px) {
+  .inputsection {
+    grid-template-columns: 1fr;
+  }
+
+  .addinput,
+  .conditions {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .addinput label,
+  .conditions label {
+    margin-bottom: 8px;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .addinput input,
+  .addinput textarea,
+  .addinput select,
+  .conditions select {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .productbutton-container {
+    flex-direction: column;
+  }
+
+  .productButtonAdd {
+    width: 100%;
+  }
+}
+
+

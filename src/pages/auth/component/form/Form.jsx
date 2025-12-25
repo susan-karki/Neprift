@@ -747,11 +747,15 @@ const Form = ({ type = 'Sign Up', onSubmit }) => {
             </>
           )}
 
-          {type === 'Login' && (
-            <div className="forgot-password">
-              Forgot password? <span>Click Here!</span>
-            </div>
-          )}
+{type === "Login" && (
+  <div className="forgot-password">
+    Forgot password?{" "}
+    <span onClick={() => navigate("/auth/forgot-password")}>
+      Click Here!
+    </span>
+  </div>
+)}
+
 
           <button type="submit" className="submit-btn">
             {type === 'Login' ? 'Login' : 'Sign Up'}
