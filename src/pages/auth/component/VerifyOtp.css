@@ -1,5 +1,5 @@
 /* Container */
-.forgot-password-container {
+.verify-otp-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
 }
 
 /* Form */
-.forgot-password-form {
+.verify-otp-form {
   width: 100%;
   max-width: 400px;
   padding: 30px 25px;
@@ -22,14 +22,14 @@
 }
 
 /* Title */
-.forgot-password-title {
+.verify-otp-title {
   text-align: center;
   color: #333;
   font-size: 24px;
 }
 
 /* Label */
-.forgot-password-label {
+.verify-otp-label {
   display: flex;
   flex-direction: column;
   font-weight: 500;
@@ -37,7 +37,7 @@
 }
 
 /* Input */
-.forgot-password-input {
+.verify-otp-input {
   margin-top: 6px;
   padding: 12px 15px;
   border-radius: 8px;
@@ -47,29 +47,27 @@
   transition: border-color 0.2s;
 }
 
-.forgot-password-input:focus {
+.verify-otp-input:focus {
   border-color: #4caf50;
 }
 
-/* Button */
-.forgot-password-button {
+.verify-otp-button {
   padding: 12px 20px;
   border: none;
   border-radius: 8px;
-  background-color: #c9ab00;
+  background-color: #c4a704;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
-.forgot-password-button:hover {
-  background-color: #d7bb2e;
+.verify-otp-button:hover {
+  background-color: #d8cb16;
 }
 
-/* Responsive */
 @media (max-width: 500px) {
-  .forgot-password-form {
+  .verify-otp-form {
     padding: 25px 20px;
   }
 }

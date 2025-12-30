@@ -44,7 +44,7 @@ function AdminLayout() {
             </li>
 
             <li className="admin_menu_item">
-              <Link to="/auth/register">Logout</Link>
+              <Link to="/auth/login">Logout</Link>
             </li>
 
           </ul>

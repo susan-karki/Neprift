@@ -159,13 +159,34 @@ const Navbar = () => {
     setRole(storedRole ? storedRole.toLowerCase() : null);
   };
 
+  // const handleLogout = () => {
+  //   localStorage.removeItem("token1");
+  //   localStorage.removeItem("role");
+  //   window.dispatchEvent(new Event("authChange"));
+  //   setMenuOpen(false);
+  //   navigate("/auth/login");
+  // };
+
+
   const handleLogout = () => {
-    localStorage.removeItem("token1");
-    localStorage.removeItem("role");
-    window.dispatchEvent(new Event("authChange"));
-    setMenuOpen(false);
-    navigate("/auth/login");
-  };
+  // Remove all auth-related data
+  localStorage.removeItem("token1");
+  localStorage.removeItem("userId");
+  localStorage.removeItem("role");
+  localStorage.removeItem("userEmail");
+
+  // Notify app about auth change
+  window.dispatchEvent(new Event("authChange"));
+
+  // Close any menu if needed
+  setMenuOpen(false);
+
+  // Redirect to login
+  navigate("/auth/login");
+
+  console.log("Logged out, all token data cleared!");
+};
+
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -207,8 +228,8 @@ const Navbar = () => {
         {isLoggedIn && role === "seller" && (
           <>
             <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-            <li><Link to="/product" onClick={closeMenu}>Add Product</Link></li>
-            <li><Link to="/profile" onClick={closeMenu}>Profile</Link></li>
+            <li><Link to="seller/sellerdash" onClick={closeMenu}>Dashboard</Link></li>
+            <li><Link to="profile" onClick={closeMenu}>Profile</Link></li>
             <li>
               <button className="logout-btn" onClick={handleLogout}>
                 Logout
@@ -220,8 +241,8 @@ const Navbar = () => {
         {isLoggedIn && role === "customer" && (
           <>
             <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-            <li><Link to="/CartPage" onClick={closeMenu}>Cart</Link></li>
-            <li><Link to="/profile" onClick={closeMenu}>Profile</Link></li>
+            <li><Link to="CartPage" onClick={closeMenu}>Cart</Link></li>
+            <li><Link to="profile" onClick={closeMenu}>Profile</Link></li>
             <li>
               <button className="logout-btn" onClick={handleLogout}>
                 Logout

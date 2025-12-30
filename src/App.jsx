@@ -165,6 +165,10 @@ import SellerDashboard from './seller/components/SellerDashboard.jsx'
 import AdminDonations from './admin/components/AdminDonations.jsx'
 import Singleproduct from './pages/webPage/components/Singleproduct.jsx'
 import ForgotPassword from './pages/auth/component/ForgotPassword.jsx'
+import SellerProfile from './seller/components/sellerProfile.jsx'
+import ResetPassword from './pages/auth/component/ResetPassword.jsx'
+import VerifyOtp from './pages/auth/component/VerifyOtp.jsx'
+import CustomerProfile from './pages/webPage/components/customerprofile.jsx'
 
 function App() {
   return (
@@ -190,11 +194,14 @@ function App() {
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/register" element={<Register />} />
         <Route path="/auth/forgot-password" element={<ForgotPassword />} />
+        <Route path="/otp" element={<VerifyOtp />} />
+        <Route path="/reset" element={<ResetPassword/>} />
         {/* <Route path="/product" element={<AddProduct />} /> */}
         <Route path="/singleproduct/:id" element={<Singleproduct />} />
         <Route path="/cartpage" element={<CartPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/customerProfile" element={<CustomerProfile />} />
         {/* <Route path="/submit" element={<Submit />} /> */}
         {/* <Route path="/order" element={<SellerOrders />} /> */}
 
@@ -213,6 +220,7 @@ function App() {
           <Route path="suggestions" element={<NepriftSuggestions />} />
           <Route path="policies" element={<NepriftPolicies />} />
           <Route path="sellerdash" element={<SellerDashboard />} />
+          <Route path="sellerProfile" element={<SellerProfile />} />
         </Route>
       </Routes>
 

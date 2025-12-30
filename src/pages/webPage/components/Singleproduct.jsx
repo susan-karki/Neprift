@@ -137,7 +137,7 @@ const Singleproduct = () => {
 
   const fetchSingleProduct = async () => {
     try {
-      const res = await API.get(`/product/${id}`);
+      const res = await API.get(`/auth/product/${id}`);
       console.log("Single product response:", res.data);
 
       setProduct(res.data.responseBody);
