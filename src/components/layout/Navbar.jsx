@@ -229,7 +229,7 @@ const Navbar = () => {
           <>
             <li><Link to="/" onClick={closeMenu}>Home</Link></li>
             <li><Link to="seller/sellerdash" onClick={closeMenu}>Dashboard</Link></li>
-            <li><Link to="profile" onClick={closeMenu}>Profile</Link></li>
+            <li><Link to="customerProfile" onClick={closeMenu}>Profile</Link></li>
             <li>
               <button className="logout-btn" onClick={handleLogout}>
                 Logout

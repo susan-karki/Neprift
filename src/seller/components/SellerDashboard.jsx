@@ -138,9 +138,289 @@
 
 
 
+// import React, { useEffect, useState } from "react";
+// import API from "../../http/API";
+// import Card from "../../pages/webPage/components/card/Card";
+
+// const SellerDashboard = () => {
+//   const [products, setProducts] = useState([]);
+//   const [loading, setLoading] = useState(true);
+
+//   const fetchProducts = async () => {
+//     setLoading(true);
+
+//     try {
+//       // Get seller's userId from localStorage
+//       const sellerId = localStorage.getItem("userId");
+//       if (!sellerId) {
+//         console.error("Seller ID not found");
+//         setProducts([]);
+//         setLoading(false);
+//         return;
+//       }
+
+//       // Fetch products for this seller
+//       const res = await API.get(`/seller/product/${sellerId}`);
+//       console.log("Seller products API response:", res.data);
+
+//       const productList = (res.data.responseBody || []).map((p) => ({
+//         id: p.id,
+//         name: p.name,
+//         description: p.description,
+//         price: p.price,
+//         quantity: p.quantity,
+//         image: p.imagePath || "/default-image.png",
+//       }));
+
+//       setProducts(productList);
+//     } catch (err) {
+//       console.error("Failed to fetch seller products", err);
+//       setProducts([]);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   useEffect(() => {
+//     fetchProducts();
+//   }, []);
+
+//   return (
+//     <div>
+//       <h1>My Products</h1>
+//       <div className="container-card">
+//         {loading ? (
+//           <p>Loading products...</p>
+//         ) : products.length === 0 ? (
+//           <p>No products added yet</p>
+//         ) : (
+//           products.map((product) => <Card key={product.id} product={product} />)
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SellerDashboard;
+
+
+
+
+
+
+//new 
+
+
+
+
+// import React, { useEffect, useState } from "react";
+// import API from "../../http/API";
+// import Card from "../../pages/webPage/components/card/Card";
+// import "./SellerDashboard.css";
+
+// const SellerDashboard = () => {
+//   const [products, setProducts] = useState([]);
+//   const [loading, setLoading] = useState(true);
+
+//   const fetchProducts = async () => {
+//     setLoading(true);
+//     try {
+//       const sellerId = localStorage.getItem("userId");
+//       if (!sellerId) return;
+
+//       const res = await API.get(`/seller/product/${sellerId}`);
+
+//       const productList = (res.data.responseBody || []).map((p) => ({
+//         id: p.id,
+//         name: p.name,
+//         description: p.description,
+//         price: p.price,
+//         quantity: p.quantity,
+//         image: p.imagePath || "/default-image.png",
+//       }));
+
+//       setProducts(productList);
+//     } catch (err) {
+//       console.error(err);
+//       setProducts([]);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleDelete = async (productId) => {
+//     if (!window.confirm("Delete this product?")) return;
+//     try {
+//       await API.delete(`/seller/product/${productId}`);
+//       alert("Product deleted");
+//       fetchProducts();
+//     } catch {
+//       alert("Delete failed");
+//     }
+//   };
+
+//   const handleUpdate = (productId) => {
+//     window.location.href = `/seller/update-product/${productId}`;
+//   };
+
+//   useEffect(() => {
+//     fetchProducts();
+//   }, []);
+
+//   return (
+//     <div>
+//       <h1>My Products</h1>
+
+//       <div className="container-card seller-dashboard">
+//         {loading ? (
+//           <p>Loading...</p>
+//         ) : products.length === 0 ? (
+//           <p>No products added yet</p>
+//         ) : (
+//           products.map((product) => (
+//             <div key={product.id} className="seller-product-wrapper">
+//               {/* EXISTING CARD (UNCHANGED) */}
+//               <Card product={product} />
+
+//               {/* SELLER ACTIONS */}
+//               <div className="seller-actions">
+//                 <button onClick={() => handleUpdate(product.id)}>
+//                   Update
+//                 </button>
+//                 <button onClick={() => handleDelete(product.id)}>
+//                   Delete
+//                 </button>
+//               </div>
+//             </div>
+//           ))
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SellerDashboard;
+
+
+
+
+
+
+
+
+
+// import React, { useEffect, useState } from "react";
+// import API from "../../http/API";
+// import Card from "../../pages/webPage/components/card/Card";
+// import "./SellerDashboard.css";
+
+// const SellerDashboard = () => {
+//   const [products, setProducts] = useState([]);
+//   const [loading, setLoading] = useState(true);
+
+//   const fetchProducts = async () => {
+//     setLoading(true);
+//     try {
+//       const sellerId = localStorage.getItem("userId");
+//       if (!sellerId) return;
+
+//       const res = await API.get(`/seller/product/${sellerId}`);
+
+//       const productList = (res.data.responseBody || []).map((p) => ({
+//         id: p.id,
+//         name: p.name,
+//         description: p.description,
+//         price: p.price,
+//         quantity: p.quantity,
+//         image: p.imagePath || "/default-image.png",
+//       }));
+
+//       setProducts(productList);
+//     } catch (err) {
+//       console.error(err);
+//       setProducts([]);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleDelete = async (productId) => {
+//     if (!window.confirm("Delete this product?")) return;
+//     try {
+//       await API.delete(`/seller/product/${productId}`);
+//       alert("Product deleted");
+//       fetchProducts();
+//     } catch {
+//       alert("Delete failed");
+//     }
+//   };
+
+//   const handleUpdate = (productId) => {
+//     window.location.href = `/seller/update-product/${productId}`;
+//   };
+
+//   useEffect(() => {
+//     fetchProducts();
+//   }, []);
+
+//   return (
+//     <div className="seller-dashboard-wrapper">
+//       <h1>My Products</h1>
+
+//       <div className="container-card seller-dashboard">
+//         {loading ? (
+//           <p>Loading...</p>
+//         ) : products.length === 0 ? (
+//           <p>No products added yet</p>
+//         ) : (
+//           products.map((product) => (
+//             <div key={product.id} className="seller-product-wrapper">
+//               {/* Product Card */}
+//               <Card product={product} />
+
+//               {/* Update/Delete buttons INSIDE card container */}
+//               <div className="seller-actions-inside">
+//                 <button
+//                   className="update-btn"
+//                   onClick={() => handleUpdate(product.id)}
+//                 >
+//                   Update
+//                 </button>
+//                 <button
+//                   className="delete-btn"
+//                   onClick={() => handleDelete(product.id)}
+//                 >
+//                   Delete
+//                 </button>
+//               </div>
+//             </div>
+//           ))
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SellerDashboard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useEffect, useState } from "react";
 import API from "../../http/API";
 import Card from "../../pages/webPage/components/card/Card";
+import "./SellerDashboard.css";
 
 const SellerDashboard = () => {
   const [products, setProducts] = useState([]);
@@ -148,20 +428,11 @@ const SellerDashboard = () => {
 
   const fetchProducts = async () => {
     setLoading(true);
-
     try {
-      // Get seller's userId from localStorage
       const sellerId = localStorage.getItem("userId");
-      if (!sellerId) {
-        console.error("Seller ID not found");
-        setProducts([]);
-        setLoading(false);
-        return;
-      }
+      if (!sellerId) return;
 
-      // Fetch products for this seller
       const res = await API.get(`/seller/product/${sellerId}`);
-      console.log("Seller products API response:", res.data);
 
       const productList = (res.data.responseBody || []).map((p) => ({
         id: p.id,
@@ -174,11 +445,26 @@ const SellerDashboard = () => {
 
       setProducts(productList);
     } catch (err) {
-      console.error("Failed to fetch seller products", err);
+      console.error(err);
       setProducts([]);
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleDelete = async (productId) => {
+    if (!window.confirm("Delete this product?")) return;
+    try {
+      await API.delete(`/seller/product/${productId}`);
+      alert("Product deleted");
+      fetchProducts();
+    } catch {
+      alert("Delete failed");
+    }
+  };
+
+  const handleUpdate = (productId) => {
+    window.location.href = `/seller/update-product/${productId}`;
   };
 
   useEffect(() => {
@@ -186,15 +472,24 @@ const SellerDashboard = () => {
   }, []);
 
   return (
-    <div>
+    <div className="seller-dashboard-wrapper">
       <h1>My Products</h1>
-      <div className="container-card">
+
+      <div className="container-card seller-dashboard">
         {loading ? (
-          <p>Loading products...</p>
+          <p>Loading...</p>
         ) : products.length === 0 ? (
           <p>No products added yet</p>
         ) : (
-          products.map((product) => <Card key={product.id} product={product} />)
+          products.map((product) => (
+            <Card
+              key={product.id}
+              product={product}
+              isSeller={true} // enable seller mode
+              onUpdate={handleUpdate}
+              onDelete={handleDelete}
+            />
+          ))
         )}
       </div>
     </div>

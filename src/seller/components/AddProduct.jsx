@@ -3223,12 +3223,12 @@ const AddProduct = ({ productData, onSubmit, onUpdate, onDelete, refreshHome }) 
             <button className="productButtonAdd" type="submit" disabled={loading}>
               {loading ? "Submitting..." : "Submit"}
             </button>
-            <button className="productButtonAdd" type="button" onClick={handleUpdate} disabled={loading}>
+            {/* <button className="productButtonAdd" type="button" onClick={handleUpdate} disabled={loading}>
               Update
             </button>
             <button className="productButtonAdd" type="button" onClick={handleDelete} disabled={loading}>
               Delete
-            </button>
+            </button> */}
           </div>
         </form>
       </div>

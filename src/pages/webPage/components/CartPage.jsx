@@ -516,7 +516,7 @@ const CartPage = () => {
       const userId = localStorage.getItem("userId");
       if (!userId) throw new Error("User ID not found");
 
-      const res = await API.get(`/cart/${userId}`);
+      const res = await API.get(`/cart-item/${userId}`);
 
       // ✅ SAFE RESPONSE HANDLING
       setCartItems(res.data.responseBody || res.data || []);

@@ -169,6 +169,7 @@ import SellerProfile from './seller/components/sellerProfile.jsx'
 import ResetPassword from './pages/auth/component/ResetPassword.jsx'
 import VerifyOtp from './pages/auth/component/VerifyOtp.jsx'
 import CustomerProfile from './pages/webPage/components/customerprofile.jsx'
+import SellerDisplayProfile from './seller/components/SellerDisplayProfile.jsx'
 
 function App() {
   return (
@@ -221,6 +222,7 @@ function App() {
           <Route path="policies" element={<NepriftPolicies />} />
           <Route path="sellerdash" element={<SellerDashboard />} />
           <Route path="sellerProfile" element={<SellerProfile />} />
+          <Route path="display" element={<SellerDisplayProfile />} />
         </Route>
       </Routes>
 

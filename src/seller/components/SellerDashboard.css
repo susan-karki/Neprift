@@ -1,70 +1,71 @@
-/* MAIN CONTAINER (NO BOX) */
-.sellerdashboard-container {
-  padding: 20px;
-}
-
-/* TITLE */
-.sellerdashboard-title {
-  font-size: 26px;
-  margin-bottom: 20px;
-}
-
-/* STATS */
-.sellerdashboard-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-/* INDIVIDUAL STAT BOX */
-.sellerdashboard-stat-card {
-  background: #ffffff;
-  padding: 22px;
+.card {
+  width: 250px;
+  background-color: #fff;
   border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* SECTION BOX (Products / Orders) */
-.sellerdashboard-section {
-  margin-top: 30px;
-  background: #ffffff;
-  padding: 22px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-/* SECTION TITLE */
-.sellerdashboard-section-title {
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
-/* TABLE */
-.sellerdashboard-table {
+.card-image img {
   width: 100%;
-  border-collapse: collapse;
+  height: 200px;
+  object-fit: cover;
 }
 
-.sellerdashboard-table th {
-  background: #f5f5f5;
-  font-weight: 600;
+.card-content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.sellerdashboard-table th,
-.sellerdashboard-table td {
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
+.add-to-cart {
+  padding: 8px 12px;
+  background-color: #2c7be5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* STATES */
-.sellerdashboard-empty {
-  color: #777;
+.add-to-cart:hover {
+  background-color: #1a5bb8;
 }
 
-.sellerdashboard-loading,
-.sellerdashboard-error {
-  padding: 20px;
-  font-size: 18px;
+/* Seller buttons inside card */
+.seller-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.seller-buttons .update-btn {
+  flex: 1;
+  background-color: #2c7be5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.seller-buttons .update-btn:hover {
+  background-color: #1a5bb8;
+}
+
+.seller-buttons .delete-btn {
+  flex: 1;
+  background-color: #e52c2c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.seller-buttons .delete-btn:hover {
+  background-color: #b81a1a;
 }
