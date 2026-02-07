@@ -195,7 +195,7 @@ const SellerDisplayProfile = () => {
   return (
     <div className="profiledisplay-wrapper">
       <div className="profiledisplay-card">
-        <h2 className="profiledisplay-title">Seller Profile</h2>
+        <h2 className="profiledisplay-title">Your Profile</h2>
 
         {/* NAME */}
         <div className="profiledisplay-row">

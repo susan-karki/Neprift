@@ -1,0 +1,80 @@
+/* Big container in the center */
+.payBtn-big-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.payBtn-big-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Wrapper for two payment cards */
+.payBtn-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; /* responsive */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Each payment card */
+.payBtn-card {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.payBtn-card:hover {
+  transform: translateY(-5px);
+}
+
+.payBtn-card h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Buttons styling */
+.payBtn-card button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Cash on Delivery Button */
+.payBtn-cod-btn {
+  background-color: #ff9800;
+  color: white;
+}
+
+.payBtn-cod-btn:hover {
+  background-color: #e68900;
+  transform: scale(1.05);
+}
+
+/* eSewa Button */
+.payBtn-esewa-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.payBtn-esewa-btn:hover {
+  background-color: #449d48;
+  transform: scale(1.05);
+}

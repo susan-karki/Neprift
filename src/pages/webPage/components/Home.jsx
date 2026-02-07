@@ -1327,7 +1327,7 @@ const Home = () => {
       );
 
       toast.success('Item added to cart 🛒');
-      navigate('/cart'); // redirect after add
+      // navigate('/cart'); // redirect after add
     } catch (err) {
       console.error('Add to cart failed', err);
       toast.error('Failed to add item to cart');

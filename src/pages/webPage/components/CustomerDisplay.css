@@ -1,16 +1,16 @@
-/* Wrapper to center the card and reduce extra space at bottom */
-.profiledisplay-wrapper {
+/* Wrapper to center the card */
+.customerProfileDisplay-wrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align card to top instead of center */
+  align-items: flex-start; /* Align to top to remove extra space at bottom */
   padding: 50px 15px;
   background-color: #f5f5f5;
   min-height: 100vh;
-  box-sizing: border-box; /* ensure padding is included in height */
+  box-sizing: border-box;
 }
 
 /* White card */
-.profiledisplay-card {
+.customerProfileDisplay-card {
   width: 100%;
   max-width: 500px;
   background-color: #ffffff;
@@ -21,7 +21,7 @@
 }
 
 /* Title */
-.profiledisplay-title {
+.customerProfileDisplay-title {
   text-align: center;
   margin-bottom: 25px;
   font-size: 24px;
@@ -30,21 +30,21 @@
 }
 
 /* Each row (label + input) */
-.profiledisplay-row {
+.customerProfileDisplay-row {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
 }
 
 /* Label */
-.profiledisplay-label {
+.customerProfileDisplay-label {
   margin-bottom: 6px;
   font-weight: 500;
   color: #555;
 }
 
 /* Input and select */
-.profiledisplay-input {
+.customerProfileDisplay-input {
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -52,16 +52,17 @@
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.profiledisplay-input:focus {
+.customerProfileDisplay-input:focus {
   outline: none;
   border-color: #2c7be5;
   box-shadow: 0 0 5px rgba(44, 123, 229, 0.3);
 }
 
-.profiledisplay-input.readonly {
+.customerProfileDisplay-input.readonly {
   background-color: #f2f2f2;
   cursor: not-allowed;
 }
+
 .readonly {
   background-color: #f5f5f5;
   cursor: not-allowed;
@@ -69,7 +70,7 @@
 
 /* Make it responsive */
 @media (max-width: 600px) {
-  .profiledisplay-card {
+  .customerProfileDisplay-card {
     padding: 20px 15px;
   }
 }

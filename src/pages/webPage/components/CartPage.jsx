@@ -1,238 +1,1151 @@
 
 
 
-// import React, { useState } from 'react'
-// import './CartPage.css'
-// import anime from '../../../assets/anime.jpg'
-// import Layout from '../../../components/layout/Layout'
-// import { toast } from 'react-toastify'
+// // // import React, { useState } from 'react'
+// // // import './CartPage.css'
+// // // import anime from '../../../assets/anime.jpg'
+// // // import Layout from '../../../components/layout/Layout'
+// // // import { toast } from 'react-toastify'
 
-// const CartPage = () => {
+// // // const CartPage = () => {
 
-//   const [cartItems, setCartItems] = useState([
-//     {
-//       id: 1,
-//       name: "Monkey.D.Luffy",
-//       price: 15000,
-//       image: anime,
-//       qty: 1
-//     },
-//     {
-//       id: 2,
-//       name: "Luffy",
-//       price: 13000,
-//       image: anime,
-//       qty: 1
-//     }
-//   ])
+// // //   const [cartItems, setCartItems] = useState([
+// // //     {
+// // //       id: 1,
+// // //       name: "Monkey.D.Luffy",
+// // //       price: 15000,
+// // //       image: anime,
+// // //       qty: 1
+// // //     },
+// // //     {
+// // //       id: 2,
+// // //       name: "Luffy",
+// // //       price: 13000,
+// // //       image: anime,
+// // //       qty: 1
+// // //     }
+// // //   ])
 
-//   const isLoggedIn = () => {
-//     return !!localStorage.getItem("token")
-//   }
+// // //   const isLoggedIn = () => {
+// // //     return !!localStorage.getItem("token")
+// // //   }
 
-//   const handleDelete = (id) => {
-//     if (!isLoggedIn()) {
-//       toast.warning("Please login first ❗")
-//       return
-//     }
+// // //   const handleDelete = (id) => {
+// // //     if (!isLoggedIn()) {
+// // //       toast.warning("Please login first ❗")
+// // //       return
+// // //     }
 
-//     setCartItems(cartItems.filter(item => item.id !== id))
-//     toast.success("Item removed from cart 🗑️")
-//   }
+// // //     setCartItems(cartItems.filter(item => item.id !== id))
+// // //     toast.success("Item removed from cart 🗑️")
+// // //   }
 
-//   const handleShare = (item) => {
-//     const shareText = `Check out this product: ${item.name} - Rs.${item.price}`
+// // //   const handleShare = (item) => {
+// // //     const shareText = `Check out this product: ${item.name} - Rs.${item.price}`
 
-//     navigator.clipboard.writeText(shareText)
-//     toast.success("Product link copied 📋")
-//   }
+// // //     navigator.clipboard.writeText(shareText)
+// // //     toast.success("Product link copied 📋")
+// // //   }
 
-//   const totalPrice = cartItems.reduce(
-//     (total, item) => total + item.price * item.qty,
-//     0
-//   )
+// // //   const totalPrice = cartItems.reduce(
+// // //     (total, item) => total + item.price * item.qty,
+// // //     0
+// // //   )
 
-//   return (
-//     <Layout>
-//       <div className="wrapper">
-//         <div className="items">
+// // //   return (
+// // //     <Layout>
+// // //       <div className="wrapper">
+// // //         <div className="items">
 
-//           <div className="title">
-//             <h3>Your Cart</h3>
-//           </div>
+// // //           <div className="title">
+// // //             <h3>Your Cart</h3>
+// // //           </div>
 
-//           {cartItems.length === 0 ? (
-//             <p className="empty">Your cart is empty</p>
-//           ) : (
-//             cartItems.map(item => (
-//               <div className="product" key={item.id}>
+// // //           {cartItems.length === 0 ? (
+// // //             <p className="empty">Your cart is empty</p>
+// // //           ) : (
+// // //             cartItems.map(item => (
+// // //               <div className="product" key={item.id}>
                 
-//                 <img src={item.image} alt={item.name} />
+// // //                 <img src={item.image} alt={item.name} />
 
-//                 <div className="details">
-//                   <h2>{item.name}</h2>
+// // //                 <div className="details">
+// // //                   <h2>{item.name}</h2>
 
-//                   <div className="size">
-//                     <h3>SIZE : Medium</h3>
-//                   </div>
+// // //                   <div className="size">
+// // //                     <h3>SIZE : Medium</h3>
+// // //                   </div>
 
-//                   <div className="qty">
-//                     <h4>
-//                       Qty :
-//                       <input
-//                         type="number"
-//                         value={item.qty}
-//                         min="1"
-//                         readOnly
-//                       />
-//                     </h4>
+// // //                   <div className="qty">
+// // //                     <h4>
+// // //                       Qty :
+// // //                       <input
+// // //                         type="number"
+// // //                         value={item.qty}
+// // //                         min="1"
+// // //                         readOnly
+// // //                       />
+// // //                     </h4>
 
-//                     <button onClick={() => handleDelete(item.id)}>
-//                       Delete
-//                     </button>
+// // //                     <button onClick={() => handleDelete(item.id)}>
+// // //                       Delete
+// // //                     </button>
 
-//                     <button onClick={() => handleShare(item)}>
-//                       Share
-//                     </button>
-//                   </div>
-//                 </div>
+// // //                     <button onClick={() => handleShare(item)}>
+// // //                       Share
+// // //                     </button>
+// // //                   </div>
+// // //                 </div>
 
-//                 <div className="price">
-//                   <p>Rs.{item.price}</p>
-//                 </div>
-//               </div>
-//             ))
-//           )}
+// // //                 <div className="price">
+// // //                   <p>Rs.{item.price}</p>
+// // //                 </div>
+// // //               </div>
+// // //             ))
+// // //           )}
 
-//           {cartItems.length > 0 && (
-//             <div className="total">
-//               <h3>Total</h3>
-//               <h3>Rs.{totalPrice}</h3>
-//             </div>
-//           )}
+// // //           {cartItems.length > 0 && (
+// // //             <div className="total">
+// // //               <h3>Total</h3>
+// // //               <h3>Rs.{totalPrice}</h3>
+// // //             </div>
+// // //           )}
 
-//         </div>
-//       </div>
-//     </Layout>
-//   )
-// }
+// // //         </div>
+// // //       </div>
+// // //     </Layout>
+// // //   )
+// // // }
 
-// export default CartPage
+// // // export default CartPage
 
 
-// import React, { useEffect, useState } from 'react';
-// import './CartPage.css';
-// import Layout from '../../../components/layout/Layout';
-// import { toast } from 'react-toastify';
+// // // import React, { useEffect, useState } from 'react';
+// // // import './CartPage.css';
+// // // import Layout from '../../../components/layout/Layout';
+// // // import { toast } from 'react-toastify';
+
+// // // const CartPage = () => {
+// // //   const [cartItems, setCartItems] = useState([]);
+// // //   const [loading, setLoading] = useState(true);
+// // //   const [token, setToken] = useState(localStorage.getItem('token'));
+// // //   const [loginWarningShown, setLoginWarningShown] = useState(false);
+
+// // //   const isLoggedIn = () => !!token;
+
+// // //   // Update token if user logs in/out while on this page
+// // //   useEffect(() => {
+// // //     const handleAuthChange = () => setToken(localStorage.getItem('token'));
+// // //     window.addEventListener('authChange', handleAuthChange);
+// // //     return () => window.removeEventListener('authChange', handleAuthChange);
+// // //   }, []);
+
+// // //   // Fetch cart items from backend
+// // //   const fetchCart = async () => {
+// // //     if (!isLoggedIn()) {
+// // //       setLoading(false);
+// // //       if (!loginWarningShown) {
+// // //         toast.warning('Please login first ❗'); // show warning once
+// // //         setLoginWarningShown(true);
+// // //       }
+// // //       return;
+// // //     }
+
+// // //     try {
+// // //       setLoading(true);
+// // //       const res = await fetch('/api/cart', {
+// // //         headers: { Authorization: `Bearer ${token}` },
+// // //       });
+// // //       if (!res.ok) throw new Error('Failed to fetch');
+// // //       const data = await res.json();
+// // //       setCartItems(data);
+// // //     } catch (err) {
+// // //       toast.error('Failed to fetch cart items ❌');
+// // //     } finally {
+// // //       setLoading(false);
+// // //     }
+// // //   };
+
+// // //   useEffect(() => {
+// // //     fetchCart();
+// // //   }, [token]);
+
+// // //   // Delete item
+// // //   const handleDelete = async (id) => {
+// // //     if (!isLoggedIn()) {
+// // //       toast.warning('Please login first ❗');
+// // //       return;
+// // //     }
+
+// // //     try {
+// // //       await fetch(`/api/cart/${id}`, {
+// // //         method: 'DELETE',
+// // //         headers: { Authorization: `Bearer ${token}` },
+// // //       });
+// // //       setCartItems((prev) => prev.filter((item) => item.id !== id));
+// // //       toast.success('Item removed from cart 🗑️');
+// // //     } catch (err) {
+// // //       toast.error('Failed to remove item ❌');
+// // //     }
+// // //   };
+
+// // //   // Update quantity
+// // //   const handleQtyChange = async (id, qty) => {
+// // //     if (qty < 1) return;
+
+// // //     setCartItems((prev) =>
+// // //       prev.map((item) => (item.id === id ? { ...item, qty } : item))
+// // //     );
+
+// // //     try {
+// // //       await fetch(`/api/cart/${id}`, {
+// // //         method: 'PUT',
+// // //         headers: {
+// // //           'Content-Type': 'application/json',
+// // //           Authorization: `Bearer ${token}`,
+// // //         },
+// // //         body: JSON.stringify({ qty }),
+// // //       });
+// // //     } catch (err) {
+// // //       toast.error('Failed to update quantity ❌');
+// // //     }
+// // //   };
+
+// // //   // Share item
+// // //   const handleShare = (item) => {
+// // //     const shareText = `Check out this product: ${item.name} - Rs.${item.price}`;
+// // //     navigator.clipboard.writeText(shareText);
+// // //     toast.success('Product link copied 📋');
+// // //   };
+
+// // //   const totalPrice = cartItems.reduce(
+// // //     (total, item) => total + item.price * item.qty,
+// // //     0
+// // //   );
+
+// // //   if (loading) {
+// // //     return (
+// // //       <Layout>
+// // //         <div className="wrapper">
+// // //           <p className="empty">Loading cart items...</p>
+// // //         </div>
+// // //       </Layout>
+// // //     );
+// // //   }
+
+// // //   return (
+// // //     <Layout>
+// // //       <div className="wrapper">
+// // //         <div className="items">
+// // //           <div className="title">
+// // //             <h3>Your Cart</h3>
+// // //           </div>
+
+// // //           {cartItems.length === 0 ? (
+// // //             <p className="empty">Your cart is empty</p>
+// // //           ) : (
+// // //             cartItems.map((item) => (
+// // //               <div className="product" key={item.id}>
+// // //                 <img src={item.image} alt={item.name} />
+
+// // //                 <div className="details">
+// // //                   <h2>{item.name}</h2>
+
+// // //                   <div className="size">
+// // //                     <h3>SIZE : Medium</h3>
+// // //                   </div>
+
+// // //                   <div className="qty">
+// // //                     <h4>
+// // //                       Qty :
+// // //                       <input
+// // //                         type="number"
+// // //                         value={item.qty}
+// // //                         min="1"
+// // //                         onChange={(e) =>
+// // //                           handleQtyChange(item.id, parseInt(e.target.value))
+// // //                         }
+// // //                       />
+// // //                     </h4>
+
+// // //                     <button onClick={() => handleDelete(item.id)}>Delete</button>
+// // //                     <button onClick={() => handleShare(item)}>Share</button>
+// // //                   </div>
+// // //                 </div>
+
+// // //                 <div className="price">
+// // //                   <p>Rs.{item.price}</p>
+// // //                 </div>
+// // //               </div>
+// // //             ))
+// // //           )}
+
+// // //           {cartItems.length > 0 && (
+// // //             <div className="total">
+// // //               <h3>Total</h3>
+// // //               <h3>Rs.{totalPrice}</h3>
+// // //             </div>
+// // //           )}
+// // //         </div>
+// // //       </div>
+// // //     </Layout>
+// // //   );
+// // // };
+
+// // // export default CartPage;
+
+
+
+
+
+
+// // // import React, { useEffect, useState } from 'react';
+// // // import './CartPage.css';
+// // // import Layout from '../../../components/layout/Layout';
+// // // import { toast } from 'react-toastify';
+// // // import API from '../../../http/API'; // use your API instance
+
+// // // const CartPage = () => {
+// // //   const [cartItems, setCartItems] = useState([]);
+// // //   const [loading, setLoading] = useState(true);
+// // //   const [token, setToken] = useState(localStorage.getItem('token1'));
+// // //   const [loginWarningShown, setLoginWarningShown] = useState(false);
+
+// // //   const isLoggedIn = () => !!token;
+
+// // //   // Update token if user logs in/out while on this page
+// // //   useEffect(() => {
+// // //     const handleAuthChange = () => setToken(localStorage.getItem('token1'));
+// // //     window.addEventListener('authChange', handleAuthChange);
+// // //     return () => window.removeEventListener('authChange', handleAuthChange);
+// // //   }, []);
+
+// // //   // Fetch cart items from backend
+// // //   const fetchCart = async () => {
+// // //     if (!isLoggedIn()) {
+// // //       setLoading(false);
+// // //       if (!loginWarningShown) {
+// // //         toast.warning('Please login first ❗');
+// // //         setLoginWarningShown(true);
+// // //       }
+// // //       return;
+// // //     }
+
+// // //     try {
+// // //       setLoading(true);
+
+// // //       const userId = localStorage.getItem('userId'); // make sure userId is stored after login
+// // //       if (!userId) throw new Error("User ID not found");
+
+// // //       const res = await API.get(`/cart/${userId}`);
+// // //       setCartItems(res.data); // assuming response returns cart items array
+// // //     } catch (err) {
+// // //       toast.error('Failed to fetch cart items ❌');
+// // //     } finally {
+// // //       setLoading(false);
+// // //     }
+// // //   };
+
+// // //   useEffect(() => {
+// // //     fetchCart();
+// // //   }, [token]);
+
+// // //   // Delete cart
+// // //   const handleDelete = async (id) => {
+// // //     if (!isLoggedIn()) {
+// // //       toast.warning('Please login first ❗');
+// // //       return;
+// // //     }
+
+// // //     try {
+// // //       const userId = localStorage.getItem('userId');
+// // //       if (!userId) throw new Error("User ID not found");
+
+// // //       await API.delete(`/cart?userId=${userId}`);
+// // //       setCartItems((prev) => prev.filter((item) => item.id !== id));
+// // //       toast.success('Item removed from cart 🗑️');
+// // //     } catch (err) {
+// // //       toast.error('Failed to remove item ❌');
+// // //     }
+// // //   };
+
+// // //   // Update quantity
+// // //   const handleQtyChange = async (id, qty) => {
+// // //     if (qty < 1) return;
+
+// // //     setCartItems((prev) =>
+// // //       prev.map((item) => (item.id === id ? { ...item, qty } : item))
+// // //     );
+
+// // //     try {
+// // //       await API.put(`/cart/${id}`, { qty }); // future-ready if backend supports quantity update
+// // //     } catch (err) {
+// // //       toast.error('Failed to update quantity ❌');
+// // //     }
+// // //   };
+
+// // //   // Share item
+// // //   const handleShare = (item) => {
+// // //     const shareText = `Check out this product: ${item.name} - Rs.${item.price}`;
+// // //     navigator.clipboard.writeText(shareText);
+// // //     toast.success('Product link copied 📋');
+// // //   };
+
+// // //   const totalPrice = cartItems.reduce(
+// // //     (total, item) => total + item.price * item.qty,
+// // //     0
+// // //   );
+
+// // //   if (loading) {
+// // //     return (
+// // //       <Layout>
+// // //         <div className="wrapper">
+// // //           <p className="empty">Loading cart items...</p>
+// // //         </div>
+// // //       </Layout>
+// // //     );
+// // //   }
+
+// // //   return (
+// // //     <Layout>
+// // //       <div className="wrapper">
+// // //         <div className="items">
+// // //           <div className="title">
+// // //             <h3>Your Cart</h3>
+// // //           </div>
+
+// // //           {cartItems.length === 0 ? (
+// // //             <p className="empty">Your cart is empty</p>
+// // //           ) : (
+// // //             cartItems.map((item) => (
+// // //               <div className="product" key={item.id}>
+// // //                 <img src={item.image} alt={item.name} />
+
+// // //                 <div className="details">
+// // //                   <h2>{item.name}</h2>
+
+// // //                   <div className="size">
+// // //                     <h3>SIZE : Medium</h3>
+// // //                   </div>
+
+// // //                   <div className="qty">
+// // //                     <h4>
+// // //                       Qty :
+// // //                       <input
+// // //                         type="number"
+// // //                         value={item.qty}
+// // //                         min="1"
+// // //                         onChange={(e) =>
+// // //                           handleQtyChange(item.id, parseInt(e.target.value))
+// // //                         }
+// // //                       />
+// // //                     </h4>
+
+// // //                     <button onClick={() => handleDelete(item.id)}>Delete</button>
+// // //                     <button onClick={() => handleShare(item)}>Share</button>
+// // //                   </div>
+// // //                 </div>
+
+// // //                 <div className="price">
+// // //                   <p>Rs.{item.price}</p>
+// // //                 </div>
+// // //               </div>
+// // //             ))
+// // //           )}
+
+// // //           {cartItems.length > 0 && (
+// // //             <div className="total">
+// // //               <h3>Total</h3>
+// // //               <h3>Rs.{totalPrice}</h3>
+// // //             </div>
+// // //           )}
+// // //         </div>
+// // //       </div>
+// // //     </Layout>
+// // //   );
+// // // };
+
+// // // export default CartPage;
+
+
+
+
+
+
+
+// // // import React, { useEffect, useState } from "react";
+// // // import "./CartPage.css";
+// // // import Layout from "../../../components/layout/Layout";
+// // // import { toast } from "react-toastify";
+// // // import API from "../../../http/API";
+
+// // // const CartPage = () => {
+// // //   const [cartItems, setCartItems] = useState([]);
+// // //   const [loading, setLoading] = useState(true);
+// // //   const [token, setToken] = useState(localStorage.getItem("token1"));
+// // //   const [loginWarningShown, setLoginWarningShown] = useState(false);
+
+// // //   const isLoggedIn = () => !!token;
+
+// // //   // 🔁 Listen for login/logout
+// // //   useEffect(() => {
+// // //     const handleAuthChange = () => {
+// // //       setToken(localStorage.getItem("token1"));
+// // //     };
+
+// // //     window.addEventListener("authChange", handleAuthChange);
+// // //     return () =>
+// // //       window.removeEventListener("authChange", handleAuthChange);
+// // //   }, []);
+
+// // //   // 🛒 Fetch cart
+// // //   const fetchCart = async () => {
+// // //     if (!isLoggedIn()) {
+// // //       setLoading(false);
+
+// // //       if (!loginWarningShown) {
+// // //         toast.warning("Please login first ❗");
+// // //         setLoginWarningShown(true);
+// // //       }
+// // //       return;
+// // //     }
+
+// // //     try {
+// // //       setLoading(true);
+
+// // //       const userId = localStorage.getItem("userId");
+// // //       if (!userId) throw new Error("User ID not found");
+
+// // //       const res = await API.get(`/cart-item/${userId}`);
+
+// // //       // ✅ SAFE RESPONSE HANDLING
+// // //       setCartItems(res.data.responseBody || res.data || []);
+// // //     } catch (err) {
+// // //       console.error(err);
+// // //       toast.error("Failed to fetch cart items ❌");
+// // //     } finally {
+// // //       setLoading(false);
+// // //     }
+// // //   };
+
+// // //   useEffect(() => {
+// // //     fetchCart();
+// // //   }, [token]);
+
+// // //   // 🗑️ Delete single cart item
+// // //   const handleDelete = async (itemId) => {
+// // //     if (!isLoggedIn()) {
+// // //       toast.warning("Please login first ❗");
+// // //       return;
+// // //     }
+
+// // //     try {
+// // //       await API.delete(`/cart/item/${itemId}`);
+
+// // //       setCartItems((prev) =>
+// // //         prev.filter((item) => item.id !== itemId)
+// // //       );
+
+// // //       toast.success("Item removed from cart 🗑️");
+// // //     } catch (err) {
+// // //       console.error(err);
+// // //       toast.error("Failed to remove item ❌");
+// // //     }
+// // //   };
+
+// // //   // 🔢 Update quantity (UI-first, API optional)
+// // //   const handleQtyChange = async (itemId, qty) => {
+// // //     if (qty < 1) return;
+
+// // //     setCartItems((prev) =>
+// // //       prev.map((item) =>
+// // //         item.id === itemId ? { ...item, qty } : item
+// // //       )
+// // //     );
+
+// // //     try {
+// // //       await API.put(`/cart/item/${itemId}`, { qty });
+// // //     } catch {
+// // //       toast.error("Failed to update quantity ❌");
+// // //     }
+// // //   };
+
+// // //   // 🔗 Share
+// // //   const handleShare = (item) => {
+// // //     const shareText = `Check out this product: ${item.name} - Rs.${item.price}`;
+// // //     navigator.clipboard.writeText(shareText);
+// // //     toast.success("Product link copied 📋");
+// // //   };
+
+// // //   const totalPrice = cartItems.reduce(
+// // //     (total, item) => total + item.price * item.qty,
+// // //     0
+// // //   );
+
+// // //   // ⏳ Loading
+// // //   if (loading) {
+// // //     return (
+// // //       <Layout>
+// // //         <div className="wrapper">
+// // //           <p className="empty">Loading cart items...</p>
+// // //         </div>
+// // //       </Layout>
+// // //     );
+// // //   }
+
+// // //   return (
+// // //     <Layout>
+// // //       <div className="wrapper">
+// // //         <div className="items">
+// // //           <div className="title">
+// // //             <h3>Your Cart</h3>
+// // //           </div>
+
+// // //           {cartItems.length === 0 ? (
+// // //             <p className="empty">Your cart is empty</p>
+// // //           ) : (
+// // //             cartItems.map((item) => (
+// // //               <div className="product" key={item.id}>
+// // //                 <img src={item.image} alt={item.name} />
+
+// // //                 <div className="details">
+// // //                   <h2>{item.name}</h2>
+
+// // //                   <div className="size">
+// // //                     <h3>SIZE : Medium</h3>
+// // //                   </div>
+
+// // //                   <div className="qty">
+// // //                     <h4>
+// // //                       Qty :
+// // //                       <input
+// // //                         type="number"
+// // //                         min="1"
+// // //                         value={item.qty}
+// // //                         onChange={(e) =>
+// // //                           handleQtyChange(
+// // //                             item.id,
+// // //                             parseInt(e.target.value)
+// // //                           )
+// // //                         }
+// // //                       />
+// // //                     </h4>
+
+// // //                     <button onClick={() => handleDelete(item.id)}>
+// // //                       Delete
+// // //                     </button>
+// // //                     <button onClick={() => handleShare(item)}>
+// // //                       Share
+// // //                     </button>
+// // //                   </div>
+// // //                 </div>
+
+// // //                 <div className="price">
+// // //                   <p>Rs.{item.price}</p>
+// // //                 </div>
+// // //               </div>
+// // //             ))
+// // //           )}
+
+// // //           {cartItems.length > 0 && (
+// // //             <div className="total">
+// // //               <h3>Total</h3>
+// // //               <h3>Rs.{totalPrice}</h3>
+// // //             </div>
+// // //           )}
+// // //         </div>
+// // //       </div>
+// // //     </Layout>
+// // //   );
+// // // };
+
+// // // export default CartPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // // latest with buttons
+
+
+// // import React, { useEffect, useState } from "react";
+// // import "./CartPage.css";
+// // import Layout from "../../../components/layout/Layout";
+// // import { toast } from "react-toastify";
+// // import API from "../../../http/API";
+
+// // const CartPage = () => {
+// //   const [cartItems, setCartItems] = useState([]);
+// //   const [loading, setLoading] = useState(true);
+// //   const [token, setToken] = useState(localStorage.getItem("token1"));
+// //   const [loginWarningShown, setLoginWarningShown] = useState(false);
+
+// //   const isLoggedIn = () => !!token;
+
+// //   // 🔁 Listen for login/logout
+// //   useEffect(() => {
+// //     const handleAuthChange = () => {
+// //       setToken(localStorage.getItem("token1"));
+// //     };
+
+// //     window.addEventListener("authChange", handleAuthChange);
+// //     return () =>
+// //       window.removeEventListener("authChange", handleAuthChange);
+// //   }, []);
+
+// //   // 🛒 Fetch cart
+// //   const fetchCart = async () => {
+// //     if (!isLoggedIn()) {
+// //       setLoading(false);
+
+// //       if (!loginWarningShown) {
+// //         toast.warning("Please login first ❗");
+// //         setLoginWarningShown(true);
+// //       }
+// //       return;
+// //     }
+
+// //     try {
+// //       setLoading(true);
+
+// //       const userId = localStorage.getItem("userId");
+// //       if (!userId) throw new Error("User ID not found");
+
+// //       const res = await API.get(`/cart-item/${userId}`);
+
+// //       // ✅ SAFE RESPONSE HANDLING
+// //       setCartItems(res.data.responseBody || res.data || []);
+// //     } catch (err) {
+// //       console.error(err);
+// //       toast.error("Failed to fetch cart items ❌");
+// //     } finally {
+// //       setLoading(false);
+// //     }
+// //   };
+
+// //   useEffect(() => {
+// //     fetchCart();
+// //   }, [token]);
+
+// //   // 🗑️ Delete single cart item
+// //   const handleDelete = async (itemId) => {
+// //     if (!isLoggedIn()) {
+// //       toast.warning("Please login first ❗");
+// //       return;
+// //     }
+
+// //     try {
+// //       await API.delete(`/cart/item/${itemId}`);
+
+// //       setCartItems((prev) =>
+// //         prev.filter((item) => item.id !== itemId)
+// //       );
+
+// //       toast.success("Item removed from cart 🗑️");
+// //     } catch (err) {
+// //       console.error(err);
+// //       toast.error("Failed to remove item ❌");
+// //     }
+// //   };
+
+// //   // 🔢 Update quantity (UI-first, API optional)
+// //   const handleQtyChange = async (itemId, qty) => {
+// //     if (qty < 1) return;
+
+// //     setCartItems((prev) =>
+// //       prev.map((item) =>
+// //         item.id === itemId ? { ...item, qty } : item
+// //       )
+// //     );
+
+// //     try {
+// //       await API.put(`/cart/item/${itemId}`, { qty });
+// //     } catch {
+// //       toast.error("Failed to update quantity ❌");
+// //     }
+// //   };
+
+// //   // 🔗 Share
+// //   const handleShare = (item) => {
+// //     const shareText = `Check out this product: ${item.name} - Rs.${item.price}`;
+// //     navigator.clipboard.writeText(shareText);
+// //     toast.success("Product link copied 📋");
+// //   };
+
+// //   const totalPrice = cartItems.reduce(
+// //     (total, item) => total + item.price * item.qty,
+// //     0
+// //   );
+
+// //   // ⏳ Loading
+// //   if (loading) {
+// //     return (
+// //       <Layout>
+// //         <div className="wrapper">
+// //           <p className="empty">Loading cart items...</p>
+// //         </div>
+// //       </Layout>
+// //     );
+// //   }
+
+// //   return (
+// //     <Layout>
+// //       <div className="wrapper">
+// //         <div className="items">
+// //           <div className="title">
+// //             <h3>Your Cart</h3>
+// //           </div>
+
+// //           {cartItems.length === 0 ? (
+// //             <p className="empty">Your cart is empty</p>
+// //           ) : (
+// //             cartItems.map((item) => (
+// //               <div className="product" key={item.id}>
+// //                 <img src={item.image} alt={item.name} />
+
+// //                 <div className="details">
+// //                   <h2>{item.name}</h2>
+
+// //                   <div className="size">
+// //                     <h3>SIZE : Medium</h3>
+// //                   </div>
+
+// //                   <div className="qty">
+// //                     <h4>
+// //                       Qty :
+// //                       <input
+// //                         type="number"
+// //                         min="1"
+// //                         value={item.qty}
+// //                         onChange={(e) =>
+// //                           handleQtyChange(
+// //                             item.id,
+// //                             parseInt(e.target.value)
+// //                           )
+// //                         }
+// //                       />
+// //                     </h4>
+
+// //                     <button onClick={() => handleDelete(item.id)}>
+// //                       Delete
+// //                     </button>
+// //                     <button onClick={() => handleShare(item)}>
+// //                       Share
+// //                     </button>
+// //                   </div>
+// //                 </div>
+
+// //                 <div className="price">
+// //                   <p>Rs.{item.price}</p>
+// //                 </div>
+// //               </div>
+// //             ))
+// //           )}
+
+// //           {cartItems.length > 0 && (
+// //             <>
+// //               <div className="total">
+// //                 <h3>Total</h3>
+// //                 <h3>Rs.{totalPrice}</h3>
+// //               </div>
+
+// //               {/* Order Now Button */}
+// //               <div className="order-btn-container">
+// //                 <button
+// //                   className="order-btn"
+// //                   onClick={() =>
+// //                     toast.success("Order placed successfully ✅")
+// //                   }
+// //                 >
+// //                   Order Now
+// //                 </button>
+// //               </div>
+// //             </>
+// //           )}
+// //         </div>
+// //       </div>
+// //     </Layout>
+// //   );
+// // };
+
+// // export default CartPage;
+
+
+
+
+
+
+
+
+
+
+// // import React, { useEffect, useState } from "react";
+// // import "./CartPage.css";
+// // import Layout from "../../../components/layout/Layout";
+// // import { toast } from "react-toastify";
+// // import API from "../../../http/API";
+
+// // const CartPage = () => {
+// //   const [cartItems, setCartItems] = useState([]);
+// //   const [loading, setLoading] = useState(true);
+// //   const [token, setToken] = useState(localStorage.getItem("token1"));
+// //   const [loginWarningShown, setLoginWarningShown] = useState(false);
+// //   const [orderLoading, setOrderLoading] = useState(false); // new state for order button
+
+// //   const isLoggedIn = () => !!token;
+
+// //   useEffect(() => {
+// //     const handleAuthChange = () => {
+// //       setToken(localStorage.getItem("token1"));
+// //     };
+// //     window.addEventListener("authChange", handleAuthChange);
+// //     return () => window.removeEventListener("authChange", handleAuthChange);
+// //   }, []);
+
+// //   const fetchCart = async () => {
+// //     if (!isLoggedIn()) {
+// //       setLoading(false);
+// //       if (!loginWarningShown) {
+// //         toast.warning("Please login first ❗");
+// //         setLoginWarningShown(true);
+// //       }
+// //       return;
+// //     }
+
+// //     try {
+// //       setLoading(true);
+
+// //       const userId = localStorage.getItem("userId");
+// //       const res = await API.get(`/cart-item/${userId}`);
+
+// //       const raw = res.data.responseBody || [];
+
+// //       /* 🔥 MERGE SAME PRODUCTS */
+// //       const mergedMap = {};
+
+// //       raw.forEach((c) => {
+// //         const pid = c.product.id;
+
+// //         if (!mergedMap[pid]) {
+// //           mergedMap[pid] = {
+// //             id: pid,
+// //             cartId: c.cartId,
+// //             name: c.product.name,
+// //             price: c.product.price,
+// //             image: c.product.imagePath,
+// //             qty: c.quantity,
+// //           };
+// //         } else {
+// //           mergedMap[pid].qty += c.quantity;
+// //         }
+// //       });
+
+// //       setCartItems(Object.values(mergedMap));
+// //     } catch (err) {
+// //       console.error(err);
+// //       toast.error("Failed to fetch cart items ❌");
+// //     } finally {
+// //       setLoading(false);
+// //     }
+// //   };
+
+// //   useEffect(() => {
+// //     fetchCart();
+// //   }, [token]);
+
+// //   const handleDelete = async (itemId) => {
+// //     try {
+// //       await API.delete(`/cart/item/${itemId}`);
+// //       setCartItems((prev) => prev.filter((item) => item.id !== itemId));
+// //       toast.success("Item removed from cart 🗑️");
+// //     } catch (err) {
+// //       toast.error("Failed to remove item ❌");
+// //     }
+// //   };
+
+// //   const handleQtyChange = async (itemId, qty) => {
+// //     if (qty < 1) return;
+
+// //     setCartItems((prev) =>
+// //       prev.map((item) => (item.id === itemId ? { ...item, qty } : item))
+// //     );
+
+// //     try {
+// //       await API.put(`/cart/item/${itemId}`, { qty });
+// //     } catch {
+// //       toast.error("Failed to update quantity ❌");
+// //     }
+// //   };
+
+// //   const handleShare = (item) => {
+// //     const shareText = `Check out this product: ${item.name} - Rs.${item.price}`;
+// //     navigator.clipboard.writeText(shareText);
+// //     toast.success("Product link copied 📋");
+// //   };
+
+// //   const handleOrder = async () => {
+// //     if (!isLoggedIn()) {
+// //       toast.warning("Please login first ❗");
+// //       return;
+// //     }
+
+// //     try {
+// //       setOrderLoading(true);
+// //       const userId = localStorage.getItem("userId");
+// //       await API.post(`/orders/place/${userId}`);
+// //       toast.success("Order placed successfully ✅");
+// //       setCartItems([]); // clear cart
+// //     } catch (err) {
+// //       console.error(err);
+// //       toast.error("Failed to place order ❌");
+// //     } finally {
+// //       setOrderLoading(false);
+// //     }
+// //   };
+
+// //   const totalPrice = cartItems.reduce(
+// //     (total, item) => total + item.price * item.qty,
+// //     0
+// //   );
+
+// //   if (loading) {
+// //     return (
+// //       <Layout>
+// //         <div className="wrapper">
+// //           <p className="empty">Loading cart items...</p>
+// //         </div>
+// //       </Layout>
+// //     );
+// //   }
+
+// //   return (
+// //     <Layout>
+// //       <div className="wrapper">
+// //         <div className="items">
+// //           <div className="title">
+// //             <h3>Your Cart</h3>
+// //           </div>
+
+// //           {cartItems.length === 0 ? (
+// //             <p className="empty">Your cart is empty</p>
+// //           ) : (
+// //             cartItems.map((item) => (
+// //               <div className="product" key={item.id}>
+// //                 <img src={item.image} alt={item.name} />
+
+// //                 <div className="details">
+// //                   <h2>{item.name}</h2>
+
+// //                   <div className="qty">
+// //                     <h4>
+// //                       Qty:
+// //                       <input
+// //                         type="number"
+// //                         min="1"
+// //                         value={item.qty}
+// //                         onChange={(e) =>
+// //                           handleQtyChange(item.id, parseInt(e.target.value))
+// //                         }
+// //                       />
+// //                     </h4>
+
+// //                     <button onClick={() => handleDelete(item.id)}>
+// //                       Delete
+// //                     </button>
+// //                     <button onClick={() => handleShare(item)}>Share</button>
+// //                   </div>
+// //                 </div>
+
+// //                 <div className="price">
+// //                   <p>Rs.{item.price}</p>
+// //                 </div>
+// //               </div>
+// //             ))
+// //           )}
+
+// //           {cartItems.length > 0 && (
+// //             <>
+// //               <div className="total">
+// //                 <h3>Total</h3>
+// //                 <h3>Rs.{totalPrice}</h3>
+// //               </div>
+
+// //               <div className="order-btn-container">
+// //                 <button
+// //                   className="order-btn"
+// //                   onClick={handleOrder}
+// //                   disabled={orderLoading}
+// //                 >
+// //                   {orderLoading ? "Placing Order..." : "Order Now"}
+// //                 </button>
+// //               </div>
+// //             </>
+// //           )}
+// //         </div>
+// //       </div>
+// //     </Layout>
+// //   );
+// // };
+
+// // export default CartPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom"; // ✅ import useNavigate
+// import "./CartPage.css";
+// import Layout from "../../../components/layout/Layout";
+// import { toast } from "react-toastify";
+// import API from "../../../http/API";
 
 // const CartPage = () => {
+//   const navigate = useNavigate(); // ✅ initialize navigate
 //   const [cartItems, setCartItems] = useState([]);
 //   const [loading, setLoading] = useState(true);
-//   const [token, setToken] = useState(localStorage.getItem('token'));
+//   const [token, setToken] = useState(localStorage.getItem("token1"));
 //   const [loginWarningShown, setLoginWarningShown] = useState(false);
+//   const [orderLoading, setOrderLoading] = useState(false); 
 
 //   const isLoggedIn = () => !!token;
 
-//   // Update token if user logs in/out while on this page
 //   useEffect(() => {
-//     const handleAuthChange = () => setToken(localStorage.getItem('token'));
-//     window.addEventListener('authChange', handleAuthChange);
-//     return () => window.removeEventListener('authChange', handleAuthChange);
+//     const handleAuthChange = () => {
+//       setToken(localStorage.getItem("token1"));
+//     };
+//     window.addEventListener("authChange", handleAuthChange);
+//     return () => window.removeEventListener("authChange", handleAuthChange);
 //   }, []);
 
-//   // Fetch cart items from backend
-//   const fetchCart = async () => {
-//     if (!isLoggedIn()) {
-//       setLoading(false);
-//       if (!loginWarningShown) {
-//         toast.warning('Please login first ❗'); // show warning once
-//         setLoginWarningShown(true);
-//       }
-//       return;
-//     }
+//   // ... all your existing code remains the same ...
 
-//     try {
-//       setLoading(true);
-//       const res = await fetch('/api/cart', {
-//         headers: { Authorization: `Bearer ${token}` },
-//       });
-//       if (!res.ok) throw new Error('Failed to fetch');
-//       const data = await res.json();
-//       setCartItems(data);
-//     } catch (err) {
-//       toast.error('Failed to fetch cart items ❌');
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   useEffect(() => {
-//     fetchCart();
-//   }, [token]);
-
-//   // Delete item
-//   const handleDelete = async (id) => {
-//     if (!isLoggedIn()) {
-//       toast.warning('Please login first ❗');
-//       return;
-//     }
-
-//     try {
-//       await fetch(`/api/cart/${id}`, {
-//         method: 'DELETE',
-//         headers: { Authorization: `Bearer ${token}` },
-//       });
-//       setCartItems((prev) => prev.filter((item) => item.id !== id));
-//       toast.success('Item removed from cart 🗑️');
-//     } catch (err) {
-//       toast.error('Failed to remove item ❌');
-//     }
-//   };
-
-//   // Update quantity
-//   const handleQtyChange = async (id, qty) => {
-//     if (qty < 1) return;
-
-//     setCartItems((prev) =>
-//       prev.map((item) => (item.id === id ? { ...item, qty } : item))
-//     );
-
-//     try {
-//       await fetch(`/api/cart/${id}`, {
-//         method: 'PUT',
-//         headers: {
-//           'Content-Type': 'application/json',
-//           Authorization: `Bearer ${token}`,
-//         },
-//         body: JSON.stringify({ qty }),
-//       });
-//     } catch (err) {
-//       toast.error('Failed to update quantity ❌');
-//     }
-//   };
-
-//   // Share item
-//   const handleShare = (item) => {
-//     const shareText = `Check out this product: ${item.name} - Rs.${item.price}`;
-//     navigator.clipboard.writeText(shareText);
-//     toast.success('Product link copied 📋');
-//   };
-
-//   const totalPrice = cartItems.reduce(
-//     (total, item) => total + item.price * item.qty,
-//     0
-//   );
-
-//   if (loading) {
-//     return (
-//       <Layout>
-//         <div className="wrapper">
-//           <p className="empty">Loading cart items...</p>
-//         </div>
-//       </Layout>
-//     );
-//   }
-
+//   // ✅ Replace handleOrder call in button with navigation
 //   return (
 //     <Layout>
 //       <div className="wrapper">
@@ -247,32 +1160,24 @@
 //             cartItems.map((item) => (
 //               <div className="product" key={item.id}>
 //                 <img src={item.image} alt={item.name} />
-
 //                 <div className="details">
 //                   <h2>{item.name}</h2>
-
-//                   <div className="size">
-//                     <h3>SIZE : Medium</h3>
-//                   </div>
-
 //                   <div className="qty">
 //                     <h4>
-//                       Qty :
+//                       Qty:
 //                       <input
 //                         type="number"
-//                         value={item.qty}
 //                         min="1"
+//                         value={item.qty}
 //                         onChange={(e) =>
 //                           handleQtyChange(item.id, parseInt(e.target.value))
 //                         }
 //                       />
 //                     </h4>
-
 //                     <button onClick={() => handleDelete(item.id)}>Delete</button>
 //                     <button onClick={() => handleShare(item)}>Share</button>
 //                   </div>
 //                 </div>
-
 //                 <div className="price">
 //                   <p>Rs.{item.price}</p>
 //                 </div>
@@ -281,10 +1186,22 @@
 //           )}
 
 //           {cartItems.length > 0 && (
-//             <div className="total">
-//               <h3>Total</h3>
-//               <h3>Rs.{totalPrice}</h3>
-//             </div>
+//             <>
+//               <div className="total">
+//                 <h3>Total</h3>
+//                 <h3>Rs.{totalPrice}</h3>
+//               </div>
+
+//               <div className="order-btn-container">
+//                 <button
+//                   className="order-btn"
+//                   onClick={() => navigate("/btn")} // ✅ navigate to /btn
+//                   disabled={orderLoading}
+//                 >
+//                   {orderLoading ? "Placing Order..." : "Order Now"}
+//                 </button>
+//               </div>
+//             </>
 //           )}
 //         </div>
 //       </div>
@@ -299,33 +1216,38 @@
 
 
 
-// import React, { useEffect, useState } from 'react';
-// import './CartPage.css';
-// import Layout from '../../../components/layout/Layout';
-// import { toast } from 'react-toastify';
-// import API from '../../../http/API'; // use your API instance
+// import React, { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import "./CartPage.css";
+// import Layout from "../../../components/layout/Layout";
+// import { toast } from "react-toastify";
+// import API from "../../../http/API";
 
 // const CartPage = () => {
+//   const navigate = useNavigate();
 //   const [cartItems, setCartItems] = useState([]);
 //   const [loading, setLoading] = useState(true);
-//   const [token, setToken] = useState(localStorage.getItem('token1'));
+//   const [token, setToken] = useState(localStorage.getItem("token1"));
 //   const [loginWarningShown, setLoginWarningShown] = useState(false);
+//   const [orderLoading, setOrderLoading] = useState(false);
 
 //   const isLoggedIn = () => !!token;
 
-//   // Update token if user logs in/out while on this page
+//   // Listen for login/logout changes
 //   useEffect(() => {
-//     const handleAuthChange = () => setToken(localStorage.getItem('token1'));
-//     window.addEventListener('authChange', handleAuthChange);
-//     return () => window.removeEventListener('authChange', handleAuthChange);
+//     const handleAuthChange = () => {
+//       setToken(localStorage.getItem("token1"));
+//     };
+//     window.addEventListener("authChange", handleAuthChange);
+//     return () => window.removeEventListener("authChange", handleAuthChange);
 //   }, []);
 
-//   // Fetch cart items from backend
+//   // Fetch cart items
 //   const fetchCart = async () => {
 //     if (!isLoggedIn()) {
 //       setLoading(false);
 //       if (!loginWarningShown) {
-//         toast.warning('Please login first ❗');
+//         toast.warning("Please login first ❗");
 //         setLoginWarningShown(true);
 //       }
 //       return;
@@ -333,14 +1255,32 @@
 
 //     try {
 //       setLoading(true);
+//       const userId = localStorage.getItem("userId");
+//       const res = await API.get(`/cart-item/${userId}`);
+//       const raw = res.data.responseBody || [];
 
-//       const userId = localStorage.getItem('userId'); // make sure userId is stored after login
-//       if (!userId) throw new Error("User ID not found");
+//       // Merge same products
+//       const mergedMap = {};
+//       raw.forEach((c) => {
+//         const pid = c.product.id;
+//         if (!mergedMap[pid]) {
+//           mergedMap[pid] = {
+//             id: pid,
+//             cartId: c.cartId,
+//             name: c.product.name,
+//             price: c.product.price,
+//             image: c.product.imagePath,
+//             qty: c.quantity,
+//           };
+//         } else {
+//           mergedMap[pid].qty += c.quantity;
+//         }
+//       });
 
-//       const res = await API.get(`/cart/${userId}`);
-//       setCartItems(res.data); // assuming response returns cart items array
+//       setCartItems(Object.values(mergedMap));
 //     } catch (err) {
-//       toast.error('Failed to fetch cart items ❌');
+//       console.error(err);
+//       toast.error("Failed to fetch cart items ❌");
 //     } finally {
 //       setLoading(false);
 //     }
@@ -350,47 +1290,62 @@
 //     fetchCart();
 //   }, [token]);
 
-//   // Delete cart
-//   const handleDelete = async (id) => {
+//   // Delete item
+//   const handleDelete = async (itemId) => {
+//     try {
+//       await API.delete(`/cart/item/${itemId}`);
+//       setCartItems((prev) => prev.filter((item) => item.id !== itemId));
+//       toast.success("Item removed from cart 🗑️");
+//     } catch (err) {
+//       toast.error("Failed to remove item ❌");
+//     }
+//   };
+
+//   // Change quantity
+//   const handleQtyChange = async (itemId, qty) => {
+//     if (qty < 1) return;
+
+//     setCartItems((prev) =>
+//       prev.map((item) => (item.id === itemId ? { ...item, qty } : item))
+//     );
+
+//     try {
+//       await API.put(`/cart/item/${itemId}`, { qty });
+//     } catch {
+//       toast.error("Failed to update quantity ❌");
+//     }
+//   };
+
+//   // Share product
+//   const handleShare = (item) => {
+//     const shareText = `Check out this product: ${item.name} - Rs.${item.price}`;
+//     navigator.clipboard.writeText(shareText);
+//     toast.success("Product link copied 📋");
+//   };
+
+//   // Place order
+//   const handleOrder = async () => {
 //     if (!isLoggedIn()) {
-//       toast.warning('Please login first ❗');
+//       toast.warning("Please login first ❗");
 //       return;
 //     }
 
 //     try {
-//       const userId = localStorage.getItem('userId');
-//       if (!userId) throw new Error("User ID not found");
-
-//       await API.delete(`/cart?userId=${userId}`);
-//       setCartItems((prev) => prev.filter((item) => item.id !== id));
-//       toast.success('Item removed from cart 🗑️');
+//       setOrderLoading(true);
+//       const userId = localStorage.getItem("userId");
+//       await API.post(`/orders/place/${userId}`); // place order
+//       toast.success("Order placed successfully ✅");
+//       setCartItems([]); // clear cart
+//       navigate("/ord"); // navigate to orders page
 //     } catch (err) {
-//       toast.error('Failed to remove item ❌');
+//       console.error(err);
+//       toast.error("Failed to place order ❌");
+//     } finally {
+//       setOrderLoading(false);
 //     }
 //   };
 
-//   // Update quantity
-//   const handleQtyChange = async (id, qty) => {
-//     if (qty < 1) return;
-
-//     setCartItems((prev) =>
-//       prev.map((item) => (item.id === id ? { ...item, qty } : item))
-//     );
-
-//     try {
-//       await API.put(`/cart/${id}`, { qty }); // future-ready if backend supports quantity update
-//     } catch (err) {
-//       toast.error('Failed to update quantity ❌');
-//     }
-//   };
-
-//   // Share item
-//   const handleShare = (item) => {
-//     const shareText = `Check out this product: ${item.name} - Rs.${item.price}`;
-//     navigator.clipboard.writeText(shareText);
-//     toast.success('Product link copied 📋');
-//   };
-
+//   // Calculate total price
 //   const totalPrice = cartItems.reduce(
 //     (total, item) => total + item.price * item.qty,
 //     0
@@ -420,32 +1375,24 @@
 //             cartItems.map((item) => (
 //               <div className="product" key={item.id}>
 //                 <img src={item.image} alt={item.name} />
-
 //                 <div className="details">
 //                   <h2>{item.name}</h2>
-
-//                   <div className="size">
-//                     <h3>SIZE : Medium</h3>
-//                   </div>
-
 //                   <div className="qty">
 //                     <h4>
-//                       Qty :
+//                       Qty:
 //                       <input
 //                         type="number"
-//                         value={item.qty}
 //                         min="1"
+//                         value={item.qty}
 //                         onChange={(e) =>
 //                           handleQtyChange(item.id, parseInt(e.target.value))
 //                         }
 //                       />
 //                     </h4>
-
 //                     <button onClick={() => handleDelete(item.id)}>Delete</button>
 //                     <button onClick={() => handleShare(item)}>Share</button>
 //                   </div>
 //                 </div>
-
 //                 <div className="price">
 //                   <p>Rs.{item.price}</p>
 //                 </div>
@@ -454,10 +1401,22 @@
 //           )}
 
 //           {cartItems.length > 0 && (
-//             <div className="total">
-//               <h3>Total</h3>
-//               <h3>Rs.{totalPrice}</h3>
-//             </div>
+//             <>
+//               <div className="total">
+//                 <h3>Total</h3>
+//                 <h3>Rs.{totalPrice}</h3>
+//               </div>
+
+//               <div className="order-btn-container">
+//                 <button
+//                   className="order-btn"
+//                   onClick={handleOrder}
+//                   disabled={orderLoading}
+//                 >
+//                   {orderLoading ? "Placing Order..." : "Order Now"}
+//                 </button>
+//               </div>
+//             </>
 //           )}
 //         </div>
 //       </div>
@@ -474,35 +1433,35 @@
 
 
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CartPage.css";
 import Layout from "../../../components/layout/Layout";
 import { toast } from "react-toastify";
 import API from "../../../http/API";
 
 const CartPage = () => {
+  const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState(localStorage.getItem("token1"));
   const [loginWarningShown, setLoginWarningShown] = useState(false);
+  const [orderLoading, setOrderLoading] = useState(false);
 
   const isLoggedIn = () => !!token;
 
-  // 🔁 Listen for login/logout
+  // Listen for login/logout changes
   useEffect(() => {
     const handleAuthChange = () => {
       setToken(localStorage.getItem("token1"));
     };
-
     window.addEventListener("authChange", handleAuthChange);
-    return () =>
-      window.removeEventListener("authChange", handleAuthChange);
+    return () => window.removeEventListener("authChange", handleAuthChange);
   }, []);
 
-  // 🛒 Fetch cart
+  // Fetch cart items
   const fetchCart = async () => {
     if (!isLoggedIn()) {
       setLoading(false);
-
       if (!loginWarningShown) {
         toast.warning("Please login first ❗");
         setLoginWarningShown(true);
@@ -512,14 +1471,29 @@ const CartPage = () => {
 
     try {
       setLoading(true);
-
       const userId = localStorage.getItem("userId");
-      if (!userId) throw new Error("User ID not found");
-
       const res = await API.get(`/cart-item/${userId}`);
+      const raw = res.data.responseBody || [];
 
-      // ✅ SAFE RESPONSE HANDLING
-      setCartItems(res.data.responseBody || res.data || []);
+      // Merge same products
+      const mergedMap = {};
+      raw.forEach((c) => {
+        const pid = c.product.id;
+        if (!mergedMap[pid]) {
+          mergedMap[pid] = {
+            id: pid,
+            cartId: c.cartId,
+            name: c.product.name,
+            price: c.product.price,
+            image: c.product.imagePath,
+            qty: c.quantity,
+          };
+        } else {
+          mergedMap[pid].qty += c.quantity;
+        }
+      });
+
+      setCartItems(Object.values(mergedMap));
     } catch (err) {
       console.error(err);
       toast.error("Failed to fetch cart items ❌");
@@ -532,35 +1506,23 @@ const CartPage = () => {
     fetchCart();
   }, [token]);
 
-  // 🗑️ Delete single cart item
+  // Delete item
   const handleDelete = async (itemId) => {
-    if (!isLoggedIn()) {
-      toast.warning("Please login first ❗");
-      return;
-    }
-
     try {
       await API.delete(`/cart/item/${itemId}`);
-
-      setCartItems((prev) =>
-        prev.filter((item) => item.id !== itemId)
-      );
-
+      setCartItems((prev) => prev.filter((item) => item.id !== itemId));
       toast.success("Item removed from cart 🗑️");
     } catch (err) {
-      console.error(err);
       toast.error("Failed to remove item ❌");
     }
   };
 
-  // 🔢 Update quantity (UI-first, API optional)
+  // Change quantity
   const handleQtyChange = async (itemId, qty) => {
     if (qty < 1) return;
 
     setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === itemId ? { ...item, qty } : item
-      )
+      prev.map((item) => (item.id === itemId ? { ...item, qty } : item))
     );
 
     try {
@@ -570,19 +1532,41 @@ const CartPage = () => {
     }
   };
 
-  // 🔗 Share
+  // Share product
   const handleShare = (item) => {
     const shareText = `Check out this product: ${item.name} - Rs.${item.price}`;
     navigator.clipboard.writeText(shareText);
     toast.success("Product link copied 📋");
   };
 
+  // Place order
+  const handleOrder = async () => {
+    if (!isLoggedIn()) {
+      toast.warning("Please login first ❗");
+      return;
+    }
+
+    try {
+      setOrderLoading(true);
+      const userId = localStorage.getItem("userId");
+      await API.post(`/orders/place/${userId}`); // place order
+      toast.success("Order placed successfully ✅");
+      setCartItems([]); // clear cart
+      navigate("/btn"); // ✅ navigate to /btn
+    } catch (err) {
+      console.error(err);
+      toast.error("Failed to place order ❌");
+    } finally {
+      setOrderLoading(false);
+    }
+  };
+
+  // Calculate total price
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.qty,
     0
   );
 
-  // ⏳ Loading
   if (loading) {
     return (
       <Layout>
@@ -607,39 +1591,24 @@ const CartPage = () => {
             cartItems.map((item) => (
               <div className="product" key={item.id}>
                 <img src={item.image} alt={item.name} />
-
                 <div className="details">
                   <h2>{item.name}</h2>
-
-                  <div className="size">
-                    <h3>SIZE : Medium</h3>
-                  </div>
-
                   <div className="qty">
                     <h4>
-                      Qty :
+                      Qty:
                       <input
                         type="number"
                         min="1"
                         value={item.qty}
                         onChange={(e) =>
-                          handleQtyChange(
-                            item.id,
-                            parseInt(e.target.value)
-                          )
+                          handleQtyChange(item.id, parseInt(e.target.value))
                         }
                       />
                     </h4>
-
-                    <button onClick={() => handleDelete(item.id)}>
-                      Delete
-                    </button>
-                    <button onClick={() => handleShare(item)}>
-                      Share
-                    </button>
+                    <button onClick={() => handleDelete(item.id)}>Delete</button>
+                    <button onClick={() => handleShare(item)}>Share</button>
                   </div>
                 </div>
-
                 <div className="price">
                   <p>Rs.{item.price}</p>
                 </div>
@@ -648,10 +1617,22 @@ const CartPage = () => {
           )}
 
           {cartItems.length > 0 && (
-            <div className="total">
-              <h3>Total</h3>
-              <h3>Rs.{totalPrice}</h3>
-            </div>
+            <>
+              <div className="total">
+                <h3>Total</h3>
+                <h3>Rs.{totalPrice}</h3>
+              </div>
+
+              <div className="order-btn-container">
+                <button
+                  className="order-btn"
+                  onClick={handleOrder}
+                  disabled={orderLoading}
+                >
+                  {orderLoading ? "Placing Order..." : "Order Now"}
+                </button>
+              </div>
+            </>
           )}
         </div>
       </div>

@@ -455,7 +455,7 @@ const SellerDashboard = () => {
   const handleDelete = async (productId) => {
     if (!window.confirm("Delete this product?")) return;
     try {
-      await API.delete(`/seller/product/${productId}`);
+      await API.delete(`/delete-product/${productId}`);
       alert("Product deleted");
       fetchProducts();
     } catch {

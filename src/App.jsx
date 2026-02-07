@@ -170,6 +170,11 @@ import ResetPassword from './pages/auth/component/ResetPassword.jsx'
 import VerifyOtp from './pages/auth/component/VerifyOtp.jsx'
 import CustomerProfile from './pages/webPage/components/customerprofile.jsx'
 import SellerDisplayProfile from './seller/components/SellerDisplayProfile.jsx'
+import CustomerDisplay from './pages/webPage/components/CustomerDisplay.jsx'
+import AdminProfileStatic from './admin/components/AdminProfileStatic.jsx'
+import PaymentButtons from './pages/webPage/components/PaymentButtons.jsx'
+import OrdersPage from './pages/webPage/components/OrdersPage.jsx'
+
 
 function App() {
   return (
@@ -203,6 +208,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/customerProfile" element={<CustomerProfile />} />
+        <Route path="/customerDisplay" element={<CustomerDisplay />} />
+        <Route path="/btn" element={<PaymentButtons />} />
+        <Route path="/ord" element={<OrdersPage />} />
         {/* <Route path="/submit" element={<Submit />} /> */}
         {/* <Route path="/order" element={<SellerOrders />} /> */}
 
@@ -212,6 +220,7 @@ function App() {
           <Route path="profile" element={<ProfileSettings />} />
           <Route path="seller" element={<AdminSeller />} />
           <Route path="donate" element={<AdminDonations />} />
+          <Route path="staticprofile" element={<AdminProfileStatic />} />
         </Route>
         <Route path="/seller" element={<SellerLayout />}>
           <Route index element={<Navigate to="sellerdash" replace />} />

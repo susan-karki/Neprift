@@ -111,6 +111,15 @@
     color : #333;
 } */
 
+
+
+
+
+
+
+
+
+
 /* ================= WRAPPER ================= */
 
 .wrapper {
@@ -337,4 +346,30 @@
     gap: 10px;
     font-size: 20px;
   }
+}
+
+
+
+
+
+/* ================= ORDER BUTTON ================= */
+
+.order-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.order-btn {
+  padding: 15px 30px;
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #c6d30c;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+  background-color: #9ad622;
 }

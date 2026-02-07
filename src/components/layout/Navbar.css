@@ -108,6 +108,46 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+
+
+/* PROFILE DROPDOWN – CLICK TO OPEN */
+.profile-nav-item {
+  position: relative;
+}
+
+.profile-nav-title {
+  cursor: pointer;
+}
+
+.profile-nav-dropdown {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: gainsboro;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 160px;
+  border-radius: 6px;
+  z-index: 200;
+}
+
+.profile-nav-dropdown li {
+  padding: 8px 16px;
+  margin: 0;
+}
+
+.profile-nav-dropdown li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.profile-nav-dropdown li:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+
 /* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
   .search-box {

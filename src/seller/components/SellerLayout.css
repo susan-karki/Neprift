@@ -118,3 +118,35 @@
   margin-top: var(--sellerdash-navbar-height);
   padding: 24px;
 }
+
+/* PROFILE DROPDOWN — SAME LOOK AS OTHERS */
+.profile-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-dropdown-title {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  opacity: 0.9;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.profile-dropdown-title:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* SUB MENU */
+.profile-dropdown-menu {
+  display: none;
+  list-style: none;
+  padding-left: 12px;
+  margin-top: 4px;
+}
+
+/* SHOW SUB MENU */
+.profile-dropdown:hover .profile-dropdown-menu {
+  display: block;
+}

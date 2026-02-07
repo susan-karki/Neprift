@@ -29,6 +29,8 @@
 // };
 
 // export default Register;
+
+
 import React, { useState } from 'react';
 import Form from './form/Form';
 import { useNavigate } from 'react-router-dom';
@@ -48,6 +50,7 @@ const Register = () => {
       
       // Debug logs - CHECK THESE IN BROWSER CONSOLE
       console.log('=== DEBUG INFO ===');
+      Console.log("Response",response.statusCode);
       console.log('HTTP Status:', response.status);
       console.log('Response Data:', response.data);
       console.log('Backend Status Code:', response.data.statusCode);
@@ -56,6 +59,7 @@ const Register = () => {
       
       // ✅ Multiple conditions to catch success
       const isSuccess = 
+       response.statusCode === 200 || 
         response.status === 200 || 
         response.status === 201 ||
         response.data.statusCode === 200 || 
@@ -73,12 +77,12 @@ const Register = () => {
           navigate('/auth/login');
         }, 2000);
       } else {
-        console.log('❌ ELSE BLOCK TRIGGERED');
+        console.log('ELSE BLOCK TRIGGERED');
         toast.error(response.data.responseMessage || 'Registration Failed');
       }
       
     } catch (error) {
-      console.error('❌ CATCH BLOCK - Registration Error:', error);
+      console.error('CATCH BLOCK - Registration Error:', error);
       
       if (error.response) {
         toast.error(
