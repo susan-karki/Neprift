@@ -1,4 +1,3 @@
-/* Basic reset */
 .admin_container,
 .admin_container * {
   box-sizing: border-box;
@@ -11,7 +10,6 @@
   --admin-muted: #f4f4f4;
 }
 
-/* Container */
 .admin_container {
   min-height: 100vh;
   background: var(--admin-muted);
@@ -19,7 +17,6 @@
   color: #222;
 }
 
-/* Sidebar */
 .admin_sidebar {
   position: fixed;
   top: 0;
@@ -68,7 +65,6 @@
   background: rgba(255,255,255,0.12);
 }
 
-/* Navbar */
 .admin_navbar {
   position: fixed;
   top: 0;
@@ -112,7 +108,6 @@
   color: #333;
 }
 
-/* Content area */
 .admin_content_area {
   margin-left: var(--admin-sidebar-width);
   margin-top: var(--admin-navbar-height);

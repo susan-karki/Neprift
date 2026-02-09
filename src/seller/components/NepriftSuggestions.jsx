@@ -9,7 +9,6 @@ function NepriftSuggestions() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // For now, just show confirmation
     console.log({ name, email, suggestion });
     setSubmitted(true);
     setName("");

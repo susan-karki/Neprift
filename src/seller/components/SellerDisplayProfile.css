@@ -1,15 +1,12 @@
-/* Wrapper to center the card and reduce extra space at bottom */
 .profiledisplay-wrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align card to top instead of center */
+  align-items: flex-start; 
   padding: 50px 15px;
   background-color: #f5f5f5;
   min-height: 100vh;
-  box-sizing: border-box; /* ensure padding is included in height */
+  box-sizing: border-box; 
 }
-
-/* White card */
 .profiledisplay-card {
   width: 100%;
   max-width: 500px;
@@ -19,8 +16,6 @@
   padding: 30px 25px;
   box-sizing: border-box;
 }
-
-/* Title */
 .profiledisplay-title {
   text-align: center;
   margin-bottom: 25px;
@@ -28,22 +23,16 @@
   color: #333;
   font-weight: 600;
 }
-
-/* Each row (label + input) */
 .profiledisplay-row {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
 }
-
-/* Label */
 .profiledisplay-label {
   margin-bottom: 6px;
   font-weight: 500;
   color: #555;
 }
-
-/* Input and select */
 .profiledisplay-input {
   padding: 10px;
   font-size: 14px;
@@ -66,8 +55,6 @@
   background-color: #f5f5f5;
   cursor: not-allowed;
 }
-
-/* Make it responsive */
 @media (max-width: 600px) {
   .profiledisplay-card {
     padding: 20px 15px;

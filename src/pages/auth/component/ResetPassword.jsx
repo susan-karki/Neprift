@@ -1,73 +1,9 @@
-// import React, { useState } from "react";
-// import axios from "axios";
-// import { baseUrl } from "../../../config";
-// import { toast } from "react-toastify";
-// import { useLocation, useNavigate } from "react-router-dom";
-
-// const ResetPassword = () => {
-//   const { state } = useLocation();
-//   const navigate = useNavigate();
-
-//   const [password, setPassword] = useState("");
-//   const email = state?.email;
-//   const token = localStorage.getItem("resetToken");
-
-//   const handleReset = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       await axios.post(
-//         `${baseUrl}/reset-password`,
-//         { email, password },
-//         {
-//           headers: {
-//             Authorization: `Bearer ${token}`,
-//           },
-//         }
-//       );
-
-//       localStorage.removeItem("resetToken");
-//       toast.success("Password reset successful");
-//       navigate("/auth/login");
-
-//     } catch (err) {
-//       toast.error(err?.response?.data?.responseMessage || "Reset failed");
-//     }
-//   };
-
-//   return (
-//     <form onSubmit={handleReset}>
-//       <h2>Reset Password</h2>
-//       <input
-//         type="password"
-//         placeholder="New password"
-//         value={password}
-//         onChange={(e) => setPassword(e.target.value)}
-//         required
-//       />
-//       <button type="submit">Reset Password</button>
-//     </form>
-//   );
-// };
-
-// export default ResetPassword;
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState } from "react";
 import axios from "axios";
 import { baseUrl } from "../../../config";
 import { toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./ResetPassword.css"; // import the CSS
+import "./ResetPassword.css"; 
 
 const ResetPassword = () => {
   const { state } = useLocation();

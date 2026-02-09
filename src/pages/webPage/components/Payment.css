@@ -1,21 +1,10 @@
-
-/* 
-.paymentcontainer{
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
-    display : flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-} */
-
 .paymentcontainer {
   font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh; /* allows scrolling */
+  min-height: 100vh; 
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent; /* let body background show through */
+  background-color: transparent; 
   padding: 2rem;
   box-sizing: border-box;
 }

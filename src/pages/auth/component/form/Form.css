@@ -51,8 +51,6 @@ body {
   flex-direction: column;
   gap: 20px;
 }
-
-/* Layout */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -64,8 +62,6 @@ body {
   flex-direction: column;
   gap: 8px;
 }
-
-/* Labels and inputs */
 .form-group label {
   font-weight: 600;
   color: #333;
@@ -79,19 +75,15 @@ body {
   font-size: 16px;
   border-radius: 10px;
   border: 1px solid #d9d9d9;
-  background: #ffffff; /* white inputs for clean look */
+  background: #ffffff; 
   outline: none;
   box-shadow: 0 1px 2px rgba(0,0,0,0.03);
 }
-
-/* Focus states */
 .form-group input:focus,
 .form-group select:focus {
   border-color: #2980b9;
   box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.15);
 }
-
-/* Birthday icon */
 .has-icon {
   position: relative;
 }
@@ -108,8 +100,6 @@ body {
   background-repeat: no-repeat;
   background-size: 18px 18px;
 }
-
-/* Select styling with custom arrow */
 .select-wrap {
   position: relative;
 }
@@ -118,7 +108,7 @@ body {
   width: 100%;
   appearance: none;
   background-color: #ffffff;
-  padding-right: 38px; /* space for arrow */
+  padding-right: 38px; 
 }
 
 .select-arrow {
@@ -133,8 +123,6 @@ body {
   background-repeat: no-repeat;
   background-size: 14px 14px;
 }
-
-/* Submit */
 .submit-btn {
   margin-top: 6px;
   height: 52px;
@@ -157,8 +145,6 @@ body {
   transform: translateY(1px);
   box-shadow: 0 4px 10px rgba(243, 156, 18, 0.28);
 }
-
-/* Forgot password */
 .forgot-password {
   text-align: right;
   font-size: 14px;
@@ -169,8 +155,6 @@ body {
   color: #27ae60;
   cursor: pointer;
 }
-
-/* Mobile */
 @media (max-width: 720px) {
   .form-box {
     padding: 28px 20px;

@@ -34,8 +34,6 @@
 .add-to-cart:hover {
   background-color: #1a5bb8;
 }
-
-/* Seller buttons inside card */
 .seller-buttons {
   display: flex;
   justify-content: space-between;

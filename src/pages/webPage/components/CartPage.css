@@ -1,136 +1,10 @@
-/* .wrapper{
-    display : flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding : 40px;
-
-}
-.items{
-    width : 90%;
-    height : 100%;
-    padding : 20px;
-    display : flex;
-    flex-direction: column;
-    margin-top: 80px;
-
-}
-.items .title{
-    padding : 10px 0;
-    display : flex;
-    align-items: center;
-    border-bottom: 2px solid #999;
-}
-.items .title h3{
-    font-size: 36px;
-    color : #333;
-}
-.items .product{
-    padding : 60px 30px;
-    margin : 0 20px;
-    display : flex;
-    align-items: center;
-    
-}
-.product img{
-    width : 25%;
-    margin : 0 20px;
-
-}
-.product .details{
-    height : 100%;
-    margin : 0 20 px;
-    width : 60%;
-    color : #222;
-}
-.details h2{
-    font-size: 36px;
-    padding : 10px 0;
-    border-bottom: 1px solid #999;
-
-}
-.details p{
-    font-size: 20px;
-    color : #555;
-    padding : 10px 0;
-
-}
-.details .size h3{
-    font-size: 22px;
-    margin : 10px 0;
-}
-.details .qty{
-    margin : 10px 0;
-    padding : 10px 0;
-    display : flex;
-    align-items: center;
-}
-.qty h4{
-    margin-right: 30px;
-    font-size: 22px;
-}
-.qty h4 input{
-    width : 60px;
-    height : 45px;
-    font-size: 22px;
-    text-align: center;
-    outline: none;
-    border : none;
-    border-bottom: 1px solid #000;
-}
-.details .qty button{
-    height : 40px;
-    padding: 0 20px;
-    font-size: 20px;
-    border: none;
-    color : #000000;
-    cursor : pointer;
-    margin : 0 10px
-}
-.details .qty button:hover{
-    background: #daab4f;
-    color : #fff;
-}
-.product .price{
-    height : 100%;
-    margin : 0 20px;
-    width : 20%;
-    text-align: right;
-}
-.price p{
-    font-size: 36px;
-    padding : 10px 0;
-
-}
-.total{
-    display : flex;
-    justify-content: space-between;
-    padding: 30px;
-    border-top: 1px solid #999;
-    font-size: 24px;
-    color : #333;
-} */
-
-
-
-
-
-
-
-
-
-
-/* ================= WRAPPER ================= */
-
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* FIXED */
+  min-height: 100vh;
   padding: 40px;
 }
-
-/* ================= ITEMS ================= */
 
 .items {
   width: 90%;
@@ -139,8 +13,6 @@
   flex-direction: column;
   margin-top: 80px;
 }
-
-/* ================= TITLE ================= */
 
 .items .title {
   padding: 10px 0;
@@ -154,7 +26,6 @@
   color: #333;
 }
 
-/* ================= PRODUCT ================= */
 
 .items .product {
   padding: 60px 30px;
@@ -163,19 +34,15 @@
   align-items: center;
 }
 
-/* ================= IMAGE ================= */
-
 .product img {
   width: 25%;
   margin: 0 20px;
   border-radius: 8px;
 }
 
-/* ================= DETAILS ================= */
-
 .product .details {
   height: 100%;
-  margin: 0 20px; /* FIXED TYPO */
+  margin: 0 20px;
   width: 60%;
   color: #222;
 }
@@ -192,14 +59,10 @@
   padding: 10px 0;
 }
 
-/* ================= SIZE ================= */
-
 .details .size h3 {
   font-size: 22px;
   margin: 10px 0;
 }
-
-/* ================= QUANTITY ================= */
 
 .details .qty {
   margin: 10px 0;
@@ -223,8 +86,6 @@
   border-bottom: 1px solid #000;
 }
 
-/* ================= BUTTONS ================= */
-
 .details .qty button {
   height: 40px;
   padding: 0 20px;
@@ -242,8 +103,6 @@
   color: #fff;
 }
 
-/* ================= PRICE ================= */
-
 .product .price {
   height: 100%;
   margin: 0 20px;
@@ -256,8 +115,6 @@
   padding: 10px 0;
 }
 
-/* ================= TOTAL ================= */
-
 .total {
   display: flex;
   justify-content: space-between;
@@ -267,18 +124,12 @@
   color: #333;
 }
 
-/* ================= EMPTY CART ================= */
-
 .empty {
   text-align: center;
   font-size: 20px;
   margin-top: 40px;
   color: #555;
 }
-
-/* ================================================= */
-/* ================= RESPONSIVE ==================== */
-/* ================================================= */
 
 @media (max-width: 768px) {
 
@@ -347,12 +198,6 @@
     font-size: 20px;
   }
 }
-
-
-
-
-
-/* ================= ORDER BUTTON ================= */
 
 .order-btn-container {
   text-align: center;

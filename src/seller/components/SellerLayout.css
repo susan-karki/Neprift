@@ -1,4 +1,3 @@
-/* Reset */
 .sellerdash-container,
 .sellerdash-container * {
   box-sizing: border-box;
@@ -10,16 +9,12 @@
   --sellerdash-accent: #938f8f;
   --sellerdash-muted: #f4f6f6;
 }
-
-/* Container */
 .sellerdash-container {
   min-height: 100vh;
   background: var(--sellerdash-muted);
   font-family: "Segoe UI", Arial;
   color: #222;
 }
-
-/* Sidebar */
 .sellerdash-sidebar {
   position: fixed;
   top: 0;
@@ -67,8 +62,6 @@
 .sellerdash-menu-item a:hover {
   background: rgba(255,255,255,0.15);
 }
-
-/* Navbar */
 .sellerdash-navbar {
   position: fixed;
   top: 0;
@@ -111,15 +104,11 @@
   font-size: 14px;
   color: #333;
 }
-
-/* Content Area */
 .sellerdash-content-area {
   margin-left: var(--sellerdash-sidebar-width);
   margin-top: var(--sellerdash-navbar-height);
   padding: 24px;
 }
-
-/* PROFILE DROPDOWN — SAME LOOK AS OTHERS */
 .profile-dropdown {
   display: flex;
   flex-direction: column;
@@ -137,16 +126,12 @@
 .profile-dropdown-title:hover {
   background: rgba(255,255,255,0.15);
 }
-
-/* SUB MENU */
 .profile-dropdown-menu {
   display: none;
   list-style: none;
   padding-left: 12px;
   margin-top: 4px;
 }
-
-/* SHOW SUB MENU */
 .profile-dropdown:hover .profile-dropdown-menu {
   display: block;
 }

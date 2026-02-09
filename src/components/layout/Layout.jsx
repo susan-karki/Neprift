@@ -1,34 +1,3 @@
-// import React from 'react'
-// import Navbar from './Navbar'
-// import Footer from './Footer'
-
-
-// // const Layout = ({children}) => {
-// //   return (
-// //     <>
-// //     <Navbar/>
-// //     {children}
-// //     <Footer/>
-// //     </>
-
-    
-// //   )
-// // }
-// const Layout = ({ children }) => {
-//   return (
-//     <>
-//       <Navbar />
-//       <div style={{ width: "100%", overflowX: "visible" }}>
-//         {children}
-//       </div>
-//       <Footer />
-//     </>
-//   );
-// };
-// export default Layout
-
-
-
 import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
@@ -41,10 +10,10 @@ const Layout = ({ children }) => {
   }
 
   const mainStyle = {
-    flex: 1, // takes remaining space between navbar and footer
+    flex: 1,
     width: '100%',
     overflowX: 'visible',
-    padding: '20px', // optional
+    padding: '20px', 
   }
 
   return (

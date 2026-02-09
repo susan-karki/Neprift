@@ -1,15 +1,12 @@
-/* Wrapper to center the card */
 .customerProfileDisplay-wrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align to top to remove extra space at bottom */
+  align-items: flex-start;
   padding: 50px 15px;
   background-color: #f5f5f5;
   min-height: 100vh;
   box-sizing: border-box;
 }
-
-/* White card */
 .customerProfileDisplay-card {
   width: 100%;
   max-width: 500px;
@@ -20,7 +17,6 @@
   box-sizing: border-box;
 }
 
-/* Title */
 .customerProfileDisplay-title {
   text-align: center;
   margin-bottom: 25px;
@@ -28,22 +24,16 @@
   color: #333;
   font-weight: 600;
 }
-
-/* Each row (label + input) */
 .customerProfileDisplay-row {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
 }
-
-/* Label */
 .customerProfileDisplay-label {
   margin-bottom: 6px;
   font-weight: 500;
   color: #555;
 }
-
-/* Input and select */
 .customerProfileDisplay-input {
   padding: 10px;
   font-size: 14px;
@@ -67,8 +57,6 @@
   background-color: #f5f5f5;
   cursor: not-allowed;
 }
-
-/* Make it responsive */
 @media (max-width: 600px) {
   .customerProfileDisplay-card {
     padding: 20px 15px;

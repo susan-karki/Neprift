@@ -1,36 +1,3 @@
-// import React from 'react';
-// import Form from './form/Form';
-// import { useNavigate } from 'react-router-dom';
-// import axios from 'axios';
-// import { baseUrl } from '../../../config'; 
-
-// const Register = () => {
-//   const navigate = useNavigate();
-
-//   const handleRegister = async (data) => {
-//     try {
-//       const response = await axios.post(`${baseUrl}/auth/register`, data);
-
-//       if (response.statusCode === 200) {
-//         navigate('/auth/login');
-//       } else {
-//         alert("Registration Failed");
-//       }
-//     } catch (error) {
-//       alert(error?.response?.data?.message || "Something went wrong");
-//     }
-//   };
-
-//   return (
-//     <div className="app-container">
-//       <Form type="Register" onSubmit={handleRegister} />
-//     </div>
-//   );
-// };
-
-// export default Register;
-
-
 import React, { useState } from 'react';
 import Form from './form/Form';
 import { useNavigate } from 'react-router-dom';
@@ -47,8 +14,6 @@ const Register = () => {
     
     try {
       const response = await axios.post(`${baseUrl}/auth/register`, data);
-      
-      // Debug logs - CHECK THESE IN BROWSER CONSOLE
       console.log('=== DEBUG INFO ===');
       Console.log("Response",response.statusCode);
       console.log('HTTP Status:', response.status);
@@ -56,8 +21,7 @@ const Register = () => {
       console.log('Backend Status Code:', response.data.statusCode);
       console.log('Status Code Type:', typeof response.data.statusCode);
       console.log('==================');
-      
-      // ✅ Multiple conditions to catch success
+
       const isSuccess = 
        response.statusCode === 200 || 
         response.status === 200 || 
@@ -67,7 +31,7 @@ const Register = () => {
         response.data.responseMessage?.toLowerCase().includes('success');
       
       if (isSuccess) {
-        console.log('✅ SUCCESS CONDITION MET!');
+        console.log('SUCCESS CONDITION MET!');
         toast.success(response.data.responseMessage || 'User Created Successfully', {
           position: "top-right",
           autoClose: 2000,

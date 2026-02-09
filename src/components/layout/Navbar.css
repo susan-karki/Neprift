@@ -20,7 +20,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; /* always flex on desktop */
+  display: flex; 
   align-items: center;
 }
 
@@ -107,10 +107,6 @@
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
-
-
-
-/* PROFILE DROPDOWN – CLICK TO OPEN */
 .profile-nav-item {
   position: relative;
 }
@@ -147,8 +143,6 @@
   background: rgba(0, 0, 0, 0.08);
 }
 
-
-/* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
   .search-box {
     display: none;
@@ -165,13 +159,13 @@
     width: 100%;
     flex-direction: column;
     align-items: center;
-    display: none; /* hidden by default */
+    display: none; 
     background: gainsboro;
     z-index: 99;
   }
 
   .nav-links.nav-open {
-    display: flex; /* show when hamburger clicked */
+    display: flex; 
   }
 
   .nav-links li {

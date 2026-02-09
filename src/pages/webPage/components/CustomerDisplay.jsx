@@ -15,8 +15,6 @@ const CustomerDisplay = () => {
     gender: "",
     role: "",
   });
-
-  // ================= FETCH PROFILE =================
   useEffect(() => {
     if (!userId) return;
 
@@ -47,8 +45,6 @@ const CustomerDisplay = () => {
       <div className="customerProfileDisplay-wrapper">
         <div className="customerProfileDisplay-card">
           <h2 className="customerProfileDisplay-title">Your Profile</h2>
-
-          {/* NAME */}
           <div className="customerProfileDisplay-row">
             <label className="customerProfileDisplay-label">Name</label>
             <input
@@ -57,8 +53,6 @@ const CustomerDisplay = () => {
               readOnly
             />
           </div>
-
-          {/* EMAIL */}
           <div className="customerProfileDisplay-row">
             <label className="customerProfileDisplay-label">Email</label>
             <input
@@ -67,8 +61,6 @@ const CustomerDisplay = () => {
               readOnly
             />
           </div>
-
-          {/* PHONE */}
           <div className="customerProfileDisplay-row">
             <label className="customerProfileDisplay-label">Phone</label>
             <input
@@ -77,8 +69,6 @@ const CustomerDisplay = () => {
               readOnly
             />
           </div>
-
-          {/* DATE OF BIRTH */}
           <div className="customerProfileDisplay-row">
             <label className="customerProfileDisplay-label">Date of Birth</label>
             <input
@@ -88,8 +78,6 @@ const CustomerDisplay = () => {
               readOnly
             />
           </div>
-
-          {/* GENDER */}
           <div className="customerProfileDisplay-row">
             <label className="customerProfileDisplay-label">Gender</label>
             <select
@@ -102,8 +90,6 @@ const CustomerDisplay = () => {
               <option value="Other">Other</option>
             </select>
           </div>
-
-          {/* ADDRESS */}
           <div className="customerProfileDisplay-row">
             <label className="customerProfileDisplay-label">Address</label>
             <input
@@ -112,8 +98,6 @@ const CustomerDisplay = () => {
               readOnly
             />
           </div>
-
-          {/* ROLE */}
           <div className="customerProfileDisplay-row">
             <label className="customerProfileDisplay-label">Role</label>
             <input

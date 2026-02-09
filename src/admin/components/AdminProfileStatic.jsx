@@ -15,7 +15,7 @@ const AdminProfileStatic = () => {
     role: "",
   });
 
-  // ================= FETCH PROFILE =================
+ 
   useEffect(() => {
     if (!userId) return;
 
@@ -45,8 +45,6 @@ const AdminProfileStatic = () => {
     <div className="profileStaticAdmin-wrapper">
       <div className="profileStaticAdmin-card">
         <h2 className="profileStaticAdmin-title">Your Profile</h2>
-
-        {/* NAME */}
         <div className="profileStaticAdmin-row">
           <label className="profileStaticAdmin-label">Name</label>
           <input
@@ -55,8 +53,6 @@ const AdminProfileStatic = () => {
             readOnly
           />
         </div>
-
-        {/* EMAIL */}
         <div className="profileStaticAdmin-row">
           <label className="profileStaticAdmin-label">Email</label>
           <input
@@ -65,8 +61,6 @@ const AdminProfileStatic = () => {
             readOnly
           />
         </div>
-
-        {/* PHONE */}
         <div className="profileStaticAdmin-row">
           <label className="profileStaticAdmin-label">Phone</label>
           <input
@@ -75,8 +69,6 @@ const AdminProfileStatic = () => {
             readOnly
           />
         </div>
-
-        {/* DATE OF BIRTH */}
         <div className="profileStaticAdmin-row">
           <label className="profileStaticAdmin-label">Date of Birth</label>
           <input
@@ -86,8 +78,6 @@ const AdminProfileStatic = () => {
             readOnly
           />
         </div>
-
-        {/* GENDER */}
         <div className="profileStaticAdmin-row">
           <label className="profileStaticAdmin-label">Gender</label>
           <select
@@ -100,8 +90,6 @@ const AdminProfileStatic = () => {
             <option value="Other">Other</option>
           </select>
         </div>
-
-        {/* ADDRESS */}
         <div className="profileStaticAdmin-row">
           <label className="profileStaticAdmin-label">Address</label>
           <input
@@ -110,8 +98,6 @@ const AdminProfileStatic = () => {
             readOnly
           />
         </div>
-
-        {/* ROLE */}
         <div className="profileStaticAdmin-row">
           <label className="profileStaticAdmin-label">Role</label>
           <input
