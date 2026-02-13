@@ -32,6 +32,7 @@ import CustomerDisplay from './pages/webPage/components/CustomerDisplay.jsx'
 import AdminProfileStatic from './admin/components/AdminProfileStatic.jsx'
 import PaymentButtons from './pages/webPage/components/PaymentButtons.jsx'
 import OrdersPage from './pages/webPage/components/OrdersPage.jsx'
+import EsewaSuccess from './pages/webPage/components/EsewaSuccess.jsx'
 
 
 function App() {
@@ -66,6 +67,8 @@ function App() {
         <Route path="/customerDisplay" element={<CustomerDisplay />} />
         <Route path="/btn" element={<PaymentButtons />} />
         <Route path="/ord" element={<OrdersPage />} />
+<Route path="/esewa-success" element={<EsewaSuccess />} />
+
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Navigate to="dashboard" replace />} />
           <Route path="dashboard" element={<Charts />} />

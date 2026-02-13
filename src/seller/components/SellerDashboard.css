@@ -22,7 +22,7 @@
   gap: 5px;
 }
 
-.add-to-cart {
+/* .add-to-cart {
   padding: 8px 12px;
   background-color: #2c7be5;
   color: white;
@@ -66,4 +66,60 @@
 
 .seller-buttons .delete-btn:hover {
   background-color: #b81a1a;
+} */
+
+
+
+
+.add-to-cart {
+  padding: 8px 12px;
+  background-color: #f3ac3a; /* gold/orange color */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #e6b400; /* slightly darker gold on hover */
+}
+
+.seller-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.seller-buttons .update-btn {
+  flex: 1;
+  background-color: #f3ac3a; /* gold/orange color */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.seller-buttons .update-btn:hover {
+  background-color: #e6b400; /* slightly darker gold on hover */
+}
+
+.seller-buttons .delete-btn {
+  flex: 1;
+  background-color: #f8a20f; /* keep delete button red for clarity */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.seller-buttons .delete-btn:hover {
+  background-color: #ffb536; /* slightly darker red on hover */
 }

@@ -82,7 +82,7 @@ const Navbar = () => {
         {isLoggedIn && role === "customer" && (
           <>
             <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-            <li><Link to="CartPage" onClick={closeMenu}>Cart</Link></li>
+            <li><Link to="/cartpage" onClick={closeMenu}>Cart</Link></li>
             <li><Link to="/ord" onClick={closeMenu}>Orders</Link></li>
 
             <li

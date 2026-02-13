@@ -1,72 +1,65 @@
-.custOrd-wrapper {
-  padding: 30px;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.custOrd-wrapper h2 {
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.custOrd-order-card {
-  width: 100%;
-  max-width: 800px;
-  background-color: #fff;
-  border-radius: 12px;
+.orders-wrapper {
   padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9; /* optional: light background for better contrast */
 }
 
-.custOrd-order-card h3 {
-  margin-bottom: 15px;
-  color: #555;
-}
-
-.custOrd-products {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.custOrd-product {
-  display: flex;
-  gap: 15px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-}
-
-.custOrd-product img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+.order-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
   border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.custOrd-details h4 {
-  margin: 0;
-  color: #333;
+.order-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.custOrd-details p {
-  margin: 3px 0;
-  color: #555;
-}
-
-.custOrd-order-total {
-  margin-top: 15px;
-  text-align: right;
+.details-btn {
+  padding: 6px 12px;
+  background: #f3ac3a; /* main orange/gold color */
+  color: #fff; /* text white for contrast */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   font-weight: bold;
-  font-size: 18px;
-  color: #222;
+  transition: background 0.3s ease;
 }
 
-.custOrd-empty {
-  color: #888;
-  font-size: 18px;
-  text-align: center;
-  margin-top: 50px;
+.details-btn:hover {
+  background: #e6b400; /* slightly darker gold on hover */
+}
+
+.order-details {
+  margin-top: 15px;
+  border-top: 1px dashed #ccc;
+  padding-top: 15px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.product img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.product .details {
+  flex: 1;
+}
+
+.product .price {
+  font-weight: bold;
+  color: #f3ac3a; /* same orange/gold color for price */
+  margin-left: 10px;
 }
