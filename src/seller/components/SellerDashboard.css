@@ -21,59 +21,9 @@
   flex-direction: column;
   gap: 5px;
 }
-
-/* .add-to-cart {
-  padding: 8px 12px;
-  background-color: #2c7be5;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.add-to-cart:hover {
-  background-color: #1a5bb8;
-}
-.seller-buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.seller-buttons .update-btn {
-  flex: 1;
-  background-color: #2c7be5;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 0;
-  cursor: pointer;
-}
-
-.seller-buttons .update-btn:hover {
-  background-color: #1a5bb8;
-}
-
-.seller-buttons .delete-btn {
-  flex: 1;
-  background-color: #e52c2c;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 0;
-  cursor: pointer;
-}
-
-.seller-buttons .delete-btn:hover {
-  background-color: #b81a1a;
-} */
-
-
-
-
 .add-to-cart {
   padding: 8px 12px;
-  background-color: #f3ac3a; /* gold/orange color */
+  background-color: #f3ac3a; 
   color: white;
   border: none;
   border-radius: 6px;
@@ -83,7 +33,7 @@
 }
 
 .add-to-cart:hover {
-  background-color: #e6b400; /* slightly darker gold on hover */
+  background-color: #e6b400; 
 }
 
 .seller-buttons {
@@ -94,7 +44,7 @@
 
 .seller-buttons .update-btn {
   flex: 1;
-  background-color: #f3ac3a; /* gold/orange color */
+  background-color: #f3ac3a; 
   color: white;
   border: none;
   border-radius: 6px;
@@ -105,12 +55,12 @@
 }
 
 .seller-buttons .update-btn:hover {
-  background-color: #e6b400; /* slightly darker gold on hover */
+  background-color: #e6b400; 
 }
 
 .seller-buttons .delete-btn {
   flex: 1;
-  background-color: #f8a20f; /* keep delete button red for clarity */
+  background-color: #f8a20f; 
   color: white;
   border: none;
   border-radius: 6px;

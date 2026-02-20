@@ -33,6 +33,7 @@ import AdminProfileStatic from './admin/components/AdminProfileStatic.jsx'
 import PaymentButtons from './pages/webPage/components/PaymentButtons.jsx'
 import OrdersPage from './pages/webPage/components/OrdersPage.jsx'
 import EsewaSuccess from './pages/webPage/components/EsewaSuccess.jsx'
+import AdminUserMgmt from './admin/components/AdminUserMgmt.jsx'
 
 
 function App() {
@@ -76,6 +77,7 @@ function App() {
           <Route path="seller" element={<AdminSeller />} />
           <Route path="donate" element={<AdminDonations />} />
           <Route path="staticprofile" element={<AdminProfileStatic />} />
+          <Route path="usermgmt" element={<AdminUserMgmt />} />
         </Route>
         <Route path="/seller" element={<SellerLayout />}>
           <Route index element={<Navigate to="sellerdash" replace />} />
